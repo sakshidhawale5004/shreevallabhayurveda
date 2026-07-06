@@ -77,10 +77,16 @@ function Home() {
               <div className="relative z-10 w-full max-w-md mx-auto">
                 <Card3D className="p-3 bg-white/5 border border-white/20 backdrop-blur-2xl shadow-[0_30px_60px_rgba(0,0,0,0.5)] rounded-[2rem] overflow-hidden">
                   <div className="relative rounded-[1.5rem] overflow-hidden border border-white/10 shadow-inner">
-                    <img src="/assets/imageforherosection.png" alt="Ayurvedic Treatment" className="w-full h-auto object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
-                    <div className="absolute bottom-8 left-8 right-8">
-                      <div className="inline-block px-4 py-1.5 bg-gold text-primary text-xs font-bold uppercase tracking-widest rounded-full mb-3 shadow-[0_0_15px_rgba(255,215,0,0.5)]">Premium Care</div>
+                    <motion.img 
+                      src="/assets/imageforherosection.png" 
+                      alt="Ayurvedic Treatment" 
+                      className="w-full h-auto object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700 filter sepia-[1] saturate-[500%] hue-rotate-[-10deg] contrast-[120%] drop-shadow-[0_0_25px_rgba(255,215,0,0.8)]"
+                      animate={{ y: [0, -15, 0] }}
+                      transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent pointer-events-none" />
+                    <div className="absolute bottom-8 left-8 right-8 pointer-events-none">
+                      <div className="inline-block px-4 py-1.5 bg-gold text-primary text-xs font-bold uppercase tracking-widest rounded-full mb-3 shadow-[0_0_15px_rgba(255,215,0,0.5)] pointer-events-auto">Premium Care</div>
                       <h3 className="text-white font-display text-3xl drop-shadow-lg">Classical Panchakarma</h3>
                       <p className="text-white/90 text-sm mt-2 font-medium">Authentic protocols for deep cellular healing.</p>
                     </div>
