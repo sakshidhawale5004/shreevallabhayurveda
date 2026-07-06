@@ -2,39 +2,51 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
-import cat1 from "@/assets/category-1.asset.json";
-import cat2 from "@/assets/category-2.asset.json";
-import cat3 from "@/assets/category-3.asset.json";
-import cat4 from "@/assets/category-4.asset.json";
-import panchakarma from "@/assets/panchakarma.asset.json";
-import pizhichil from "@/assets/pizhichil.asset.json";
-import nasyam from "@/assets/nasyam.asset.json";
-import vashti from "@/assets/vashti.asset.json";
-import janubasti from "@/assets/3JANUBASTI.asset.json";
-import spine from "@/assets/spine.asset.json";
-import artboard1 from "@/assets/artboard-1.asset.json";
-import artboard2 from "@/assets/artboard-2.asset.json";
-import artboard3 from "@/assets/artboard-3.asset.json";
-import last from "@/assets/13LAST_PAGE.asset.json";
-import download from "@/assets/download.asset.json";
-import bg from "@/assets/bg_1.asset.json";
-
 const images = [
-  { src: panchakarma.url, label: "Panchakarma Room" },
-  { src: pizhichil.url, label: "Pizhichil Therapy" },
-  { src: vashti.url, label: "Basti Chikitsa" },
-  { src: nasyam.url, label: "Nasya Karma" },
-  { src: janubasti.url, label: "Janu Basti" },
-  { src: spine.url, label: "Spine Therapy" },
-  { src: cat1.url, label: "Consultation Room" },
-  { src: cat2.url, label: "Herb Pharmacy" },
-  { src: cat3.url, label: "Waiting Lounge" },
-  { src: cat4.url, label: "Therapy Suite" },
-  { src: artboard1.url, label: "Clinic Highlights" },
-  { src: artboard2.url, label: "Awards" },
-  { src: artboard3.url, label: "Media Feature" },
-  { src: last.url, label: "Dr. Bhanushali" },
-  { src: download.url, label: "Team" },
+  { src: "/assets/panchakarma.jpg.jpeg", label: "Panchakarma Center" },
+  { src: "/assets/pizhichil.jpg.jpeg", label: "Pizhichil Therapy" },
+  { src: "/assets/vashti.jpg.jpeg", label: "Basti Chikitsa" },
+  { src: "/assets/nasyam.jpg.jpeg", label: "Nasya Karma" },
+  { src: "/assets/3JANUBASTI.jpg.jpeg", label: "Janu Basti" },
+  { src: "/assets/spine.jpg.jpeg", label: "Spine Therapy" },
+  { src: "/assets/category-1.jpg.jpeg", label: "Consultation Room" },
+  { src: "/assets/category-2.jpg.jpeg", label: "Herb Pharmacy" },
+  { src: "/assets/category-3.jpg.jpeg", label: "Waiting Lounge" },
+  { src: "/assets/category-4.jpg.jpeg", label: "Therapy Suite" },
+  { src: "/assets/artboard-1.jpg.jpeg", label: "Clinic Highlights" },
+  { src: "/assets/artboard-2.jpg.jpeg", label: "Awards & Recognition" },
+  { src: "/assets/artboard-3.jpg.jpeg", label: "Media Feature" },
+  { src: "/assets/13LAST_PAGE.jpg.jpeg", label: "Dr. Bhanushali" },
+  { src: "/assets/download.jpg.jpeg", label: "Our Expert Team" },
+  { src: "/assets/bg_1.jpg.jpeg", label: "Clinic Ambience" },
+  { src: "/assets/category.jpg.png", label: "Ayurvedic Products" },
+  { src: "/assets/heart.jpg.jpeg", label: "Heart & Wellness" },
+  { src: "/assets/heightloss.jpg.jpeg", label: "Weight Management" },
+  { src: "/assets/img.PNG.png", label: "Clinic Front" },
+  { src: "/assets/img2.PNG.png", label: "Reception" },
+  { src: "/assets/infer.jpg.jpeg", label: "Infertility Treatment" },
+  { src: "/assets/stroke.jpg.jpeg", label: "Stroke Rehabilitation" },
+  { src: "/assets/thyroid.jpg.jpeg", label: "Thyroid Care" },
+  { src: "/assets/product-1.jpg.jpeg", label: "Herbal Medicine" },
+  { src: "/assets/product-2.jpg.jpeg", label: "Ayurvedic Formulations" },
+  { src: "/assets/product-3.jpg.jpeg", label: "Classical Churnas" },
+  { src: "/assets/product-4.jpg.jpeg", label: "Wellness Kits" },
+  { src: "/assets/product-5.jpg.jpeg", label: "Organic Herbs" },
+  { src: "/assets/product-6.jpg.jpeg", label: "Rejuvenation Oils" },
+  { src: "/assets/product-7.jpg.jpeg", label: "Immunity Boosters" },
+  { src: "/assets/product-8.jpg.jpeg", label: "Panchakarma Supplies" },
+  { src: "/assets/product-9.jpg.jpeg", label: "Natural Supplements" },
+  { src: "/assets/product-10.jpg.jpeg", label: "Healing Balms" },
+  { src: "/assets/product-11.jpg.jpeg", label: "Therapeutic Oils" },
+  { src: "/assets/product-12.jpg.jpeg", label: "Ayurvedic Syrups" },
+  { src: "/assets/product-13.jpg.jpeg", label: "Digestive Aids" },
+  { src: "/assets/product-14.jpg.jpeg", label: "Skin & Hair Care" },
+  { src: "/assets/product-15.jpg.jpeg", label: "Pain Relief Formulas" },
+  { src: "/assets/product-16.jpg.jpeg", label: "Respiratory Health" },
+  { src: "/assets/product-17.jpg.jpeg", label: "Stress Management" },
+  { src: "/assets/product-18.jpg.jpeg", label: "Women's Health" },
+  { src: "/assets/product-19.jpg.jpeg", label: "Men's Vitality" },
+  { src: "/assets/product-20.jpg.jpeg", label: "Daily Wellness" }
 ];
 
 export const Route = createFileRoute("/gallery")({
