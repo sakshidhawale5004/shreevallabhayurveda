@@ -3,10 +3,8 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 const images = [
-  { src: "/assets/category-2.jpg.jpeg", label: "Herb Pharmacy" },
   { src: "/assets/img.PNG.png", label: "Clinic Front" },
   { src: "/assets/img2.PNG.png", label: "Reception" },
-  { src: "/assets/thyroid.jpg.jpeg", label: "Thyroid Care" },
   { src: "/assets/product-1.jpg.jpeg", label: "Herbal Medicine" },
   { src: "/assets/product-2.jpg.jpeg", label: "Ayurvedic Formulations" },
   { src: "/assets/product-3.jpg.jpeg", label: "Classical Churnas" },
