@@ -10,7 +10,7 @@ export function PageHero({ eyebrow, title, subtitle, image }: { eyebrow?: string
           <>
             <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" />
             {/* Navy blue overlay */}
-            <div className="absolute inset-0 bg-primary/85" />
+            <div className="absolute inset-0 bg-primary/50" />
           </>
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
