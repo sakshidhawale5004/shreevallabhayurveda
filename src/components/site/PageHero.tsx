@@ -22,7 +22,7 @@ export function PageHero({ eyebrow, title, subtitle, image }: { eyebrow?: string
           </motion.div>
           
           {image && (
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative hidden lg:flex items-center justify-center">
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative flex items-center justify-center mt-8 lg:mt-0">
               <div className="absolute inset-0 bg-gold/20 blur-[120px] rounded-full mix-blend-screen" />
               <div className="relative z-10 w-full max-w-md mx-auto">
                 <Card3D className="p-3 bg-white/5 border border-white/20 backdrop-blur-2xl shadow-[0_30px_60px_rgba(0,0,0,0.5)] rounded-[2rem] overflow-hidden">
