@@ -4,16 +4,7 @@ import { Leaf, HeartPulse, Sparkles, ShieldCheck, Star, ArrowRight, Award, Users
 import { Layout } from "@/components/site/Layout";
 import { Card3D } from "@/components/site/Card3D";
 import { treatments } from "@/lib/treatments";
-import bg from "@/assets/bg_1.asset.json";
-import panchakarma from "@/assets/panchakarma.asset.json";
-import pizhichil from "@/assets/pizhichil.asset.json";
-import nasyam from "@/assets/nasyam.asset.json";
-import vashti from "@/assets/vashti.asset.json";
-import janubasti from "@/assets/3JANUBASTI.asset.json";
-import artboard1 from "@/assets/artboard-1.asset.json";
-import artboard2 from "@/assets/artboard-2.asset.json";
-import artboard3 from "@/assets/artboard-3.asset.json";
-import download from "@/assets/download.asset.json";
+// Using Unsplash images for high-quality visuals instead of local assets
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,18 +13,18 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Authentic classical Ayurveda and Panchakarma in Seawoods & Nerul, Navi Mumbai. Root-cause healing for heart, thyroid, stroke, infertility, arthritis and more." },
       { property: "og:title", content: "Dr. Bhanushali's Shree Vallabh Ayurveda" },
       { property: "og:description", content: "10,000+ patients healed through classical Panchakarma. Book your consultation today." },
-      { property: "og:image", content: bg.url },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop" },
     ],
   }),
   component: Home,
 });
 
 const panchakarmaTherapies = [
-  { name: "Vaman", desc: "Induced therapeutic vomiting to expel Kapha toxins", img: panchakarma.url },
-  { name: "Virechana", desc: "Medicated purgation for Pitta cleansing", img: pizhichil.url },
-  { name: "Basti", desc: "Medicated enema — the queen of Panchakarma", img: vashti.url },
-  { name: "Nasya", desc: "Nasal administration to clear head, neck, senses", img: nasyam.url },
-  { name: "Raktamokshana", desc: "Bloodletting for chronic skin & blood disorders", img: janubasti.url },
+  { name: "Vaman", desc: "Induced therapeutic vomiting to expel Kapha toxins", img: "https://images.unsplash.com/photo-1555562762-c1f9da229a4a?q=80&w=1064&auto=format&fit=crop" },
+  { name: "Virechana", desc: "Medicated purgation for Pitta cleansing", img: "https://images.unsplash.com/photo-1608283458632-48243becc089?q=80&w=987&auto=format&fit=crop" },
+  { name: "Basti", desc: "Medicated enema — the queen of Panchakarma", img: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=987&auto=format&fit=crop" },
+  { name: "Nasya", desc: "Nasal administration to clear head, neck, senses", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1220&auto=format&fit=crop" },
+  { name: "Raktamokshana", desc: "Bloodletting for chronic skin & blood disorders", img: "https://images.unsplash.com/photo-1620609351025-a131b78297bd?q=80&w=987&auto=format&fit=crop" },
 ];
 
 function Home() {
@@ -42,7 +33,7 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-primary pt-32 pb-20 md:pt-48 md:pb-32">
         <div className="absolute inset-0 -z-10">
-          <img src={bg.url} alt="" className="h-full w-full object-cover opacity-10 mix-blend-screen" />
+          <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop" alt="" className="h-full w-full object-cover opacity-10 mix-blend-screen" />
           <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80" />
         </div>
         <div className="container-page text-primary-foreground relative z-10">
@@ -86,7 +77,7 @@ function Home() {
               <div className="relative z-10 w-full max-w-md mx-auto">
                 <Card3D className="p-3 bg-white/5 border border-white/20 backdrop-blur-2xl shadow-[0_30px_60px_rgba(0,0,0,0.5)] rounded-[2rem] overflow-hidden">
                   <div className="relative rounded-[1.5rem] overflow-hidden border border-white/10 shadow-inner">
-                    <img src={download.url} alt="Ayurvedic Treatment" className="w-full h-auto object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700" />
+                    <img src="https://images.unsplash.com/photo-1608283457904-4b5536553245?q=80&w=1033&auto=format&fit=crop" alt="Ayurvedic Treatment" className="w-full h-auto object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
                     <div className="absolute bottom-8 left-8 right-8">
                       <div className="inline-block px-4 py-1.5 bg-gold text-primary text-xs font-bold uppercase tracking-widest rounded-full mb-3 shadow-[0_0_15px_rgba(255,215,0,0.5)]">Premium Care</div>
@@ -159,10 +150,10 @@ function Home() {
           <Link to="/about" className="btn-primary mt-8">Read Doctor's Story</Link>
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 gap-4">
-          <Card3D><img src={artboard1.url} alt="" className="w-full h-56 object-cover" /></Card3D>
-          <Card3D className="mt-8"><img src={artboard2.url} alt="" className="w-full h-56 object-cover" /></Card3D>
-          <Card3D className="-mt-4"><img src={artboard3.url} alt="" className="w-full h-56 object-cover" /></Card3D>
-          <Card3D className="mt-4"><img src={download.url} alt="" className="w-full h-56 object-cover" /></Card3D>
+          <Card3D><img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
+          <Card3D className="mt-8"><img src="https://images.unsplash.com/photo-1620609351052-a9b08f4cb760?q=80&w=987&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
+          <Card3D className="-mt-4"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
+          <Card3D className="mt-4"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
         </motion.div>
       </section>
 
