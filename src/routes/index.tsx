@@ -151,7 +151,7 @@ function Home() {
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 gap-4">
           <Card3D><img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
-          <Card3D className="mt-8"><img src="https://images.unsplash.com/photo-1620609351052-a9b08f4cb760?q=80&w=987&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
+          <Card3D className="mt-8"><img src="/newimages/homepage.jpg" alt="" className="w-full h-56 object-cover" /></Card3D>
           <Card3D className="-mt-4"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
           <Card3D className="mt-4"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
         </motion.div>
