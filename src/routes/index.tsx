@@ -40,37 +40,85 @@ function Home() {
   return (
     <Layout>
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-primary pt-32 pb-20 md:pt-48 md:pb-32">
         <div className="absolute inset-0 -z-10">
-          <img src={bg.url} alt="" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
+          <img src={bg.url} alt="" className="h-full w-full object-cover opacity-10 mix-blend-screen" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/80" />
         </div>
-        <div className="container-page py-28 md:py-40 text-primary-foreground relative">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 mb-6">
-              <Leaf className="h-4 w-4 text-gold" />
-              <span className="text-xs uppercase tracking-[0.2em] text-gold">Authentic Panchakarma · Since Generations</span>
-            </div>
-            <h1 className="font-display text-5xl md:text-7xl leading-[1.02]">
-              Heal at the <em className="text-gold not-italic">Root.</em><br /> Live in <em className="text-gold not-italic">True Health.</em>
-            </h1>
-            <p className="mt-6 text-lg opacity-90 max-w-2xl">
-              Dr. Swapnil Bhanushali and his Panchakarma team have helped 10,000+ patients rediscover well-being through classical Ayurveda — where the disease is not just silenced, it is dissolved.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link to="/contact" className="btn-gold">Book Appointment <ArrowRight className="ml-2 h-4 w-4" /></Link>
-              <Link to="/about" className="inline-flex items-center px-6 py-3 rounded-full border border-primary-foreground/40 hover:bg-primary-foreground/10 transition">Meet the Doctor</Link>
-            </div>
-            <div className="mt-12 grid grid-cols-3 gap-6 max-w-lg">
-              {[{icon: Users, n: "10,000+", l: "Patients Treated"}, {icon: Award, n: "15+", l: "Years Experience"}, {icon: Clock, n: "2", l: "Clinic Locations"}].map((s) => (
-                <div key={s.l}>
-                  <s.icon className="h-6 w-6 text-gold mb-2" />
-                  <div className="font-display text-3xl">{s.n}</div>
-                  <div className="text-xs opacity-70 uppercase tracking-wider">{s.l}</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+        <div className="container-page text-primary-foreground relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-gold/50 bg-gold/10 px-4 py-1.5 mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(255,215,0,0.15)]">
+                <Leaf className="h-4 w-4 text-gold" />
+                <span className="text-xs uppercase tracking-[0.2em] text-gold font-semibold">Authentic Panchakarma · Since Generations</span>
+              </div>
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.1]">
+                Heal at the <em className="text-gold not-italic relative inline-block"><span className="relative z-10">Root.</span><svg className="absolute -bottom-2 w-full text-gold/30 h-3 left-0" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent"/></svg></em><br /> Live in <em className="text-gold not-italic drop-shadow-[0_0_20px_rgba(255,215,0,0.6)]">True Health.</em>
+              </h1>
+              <p className="mt-6 text-lg md:text-xl opacity-90 leading-relaxed">
+                Dr. Swapnil Bhanushali and his Panchakarma team have helped 10,000+ patients rediscover well-being through classical Ayurveda — where the disease is not just silenced, it is dissolved.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4 items-center">
+                <Link to="/contact" className="btn-gold group text-base px-8 py-4 shadow-[0_0_25px_rgba(255,215,0,0.35)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)] transition-all border border-gold">
+                  Book Appointment <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link to="/about" className="inline-flex items-center px-8 py-4 rounded-full border-2 border-primary-foreground/30 hover:bg-primary-foreground hover:text-primary transition-all font-medium text-base shadow-lg">
+                  Meet the Doctor
+                </Link>
+              </div>
+              
+              <div className="mt-14 grid grid-cols-3 gap-6 pt-8 border-t border-primary-foreground/20">
+                {[{icon: Users, n: "10,000+", l: "Patients Treated"}, {icon: Award, n: "15+", l: "Years Experience"}, {icon: Clock, n: "2", l: "Clinic Locations"}].map((s, i) => (
+                  <motion.div key={s.l} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.1 }}>
+                    <s.icon className="h-7 w-7 text-gold mb-3 drop-shadow-md" />
+                    <div className="font-display text-3xl font-bold">{s.n}</div>
+                    <div className="text-xs opacity-70 uppercase tracking-widest mt-1">{s.l}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative lg:h-[600px] flex items-center justify-center">
+              {/* Decorative background glow */}
+              <div className="absolute inset-0 bg-gold/20 blur-[120px] rounded-full mix-blend-screen" />
+              
+              {/* The main 3D Card */}
+              <div className="relative z-10 w-full max-w-md mx-auto">
+                <Card3D className="p-3 bg-white/5 border border-white/20 backdrop-blur-2xl shadow-[0_30px_60px_rgba(0,0,0,0.5)] rounded-[2rem] overflow-hidden">
+                  <div className="relative rounded-[1.5rem] overflow-hidden border border-white/10 shadow-inner">
+                    <img src={download.url} alt="Ayurvedic Treatment" className="w-full h-auto object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
+                    <div className="absolute bottom-8 left-8 right-8">
+                      <div className="inline-block px-4 py-1.5 bg-gold text-primary text-xs font-bold uppercase tracking-widest rounded-full mb-3 shadow-[0_0_15px_rgba(255,215,0,0.5)]">Premium Care</div>
+                      <h3 className="text-white font-display text-3xl drop-shadow-lg">Classical Panchakarma</h3>
+                      <p className="text-white/90 text-sm mt-2 font-medium">Authentic protocols for deep cellular healing.</p>
+                    </div>
+                  </div>
+                </Card3D>
+              </div>
+              
+              {/* Floating elements for extra 3D depth */}
+              <motion.div animate={{ y: [0, -20, 0] }} transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }} className="absolute -left-6 top-1/4 z-20 hidden md:block">
+                <Card3D className="p-3 bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4)] flex items-center gap-4">
+                  <div className="bg-gold p-3 rounded-xl text-primary shadow-lg"><Leaf className="h-6 w-6" /></div>
+                  <div className="pr-3">
+                    <div className="text-xs text-white/80 uppercase tracking-widest font-semibold">Natural Herbs</div>
+                    <div className="font-bold text-white text-base">100% Organic</div>
+                  </div>
+                </Card3D>
+              </motion.div>
+              
+              <motion.div animate={{ y: [0, 20, 0] }} transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }} className="absolute -right-8 bottom-1/3 z-20 hidden md:block">
+                <Card3D className="p-3 bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.4)] flex items-center gap-4">
+                  <div className="bg-gold p-3 rounded-xl text-primary shadow-lg"><ShieldCheck className="h-6 w-6" /></div>
+                  <div className="pr-3">
+                    <div className="text-xs text-white/80 uppercase tracking-widest font-semibold">Certified</div>
+                    <div className="font-bold text-white text-base">Expert Doctors</div>
+                  </div>
+                </Card3D>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
