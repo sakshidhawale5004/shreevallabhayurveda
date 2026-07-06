@@ -3,10 +3,7 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 const images = [
-  { src: "/assets/vashti.jpg.jpeg", label: "Basti Chikitsa" },
-  { src: "/assets/3JANUBASTI.jpg.jpeg", label: "Janu Basti" },
   { src: "/assets/category-2.jpg.jpeg", label: "Herb Pharmacy" },
-  { src: "/assets/category-4.jpg.jpeg", label: "Therapy Suite" },
   { src: "/assets/img.PNG.png", label: "Clinic Front" },
   { src: "/assets/img2.PNG.png", label: "Reception" },
   { src: "/assets/thyroid.jpg.jpeg", label: "Thyroid Care" },
