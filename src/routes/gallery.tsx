@@ -56,7 +56,7 @@ export const Route = createFileRoute("/gallery")({
       { name: "description", content: "Explore our Panchakarma therapy suites, herbal pharmacy and clinic environment across Seawoods and Nerul." },
       { property: "og:title", content: "Clinic Gallery" },
       { property: "og:description", content: "A visual tour of our authentic Ayurveda & Panchakarma facilities." },
-      { property: "og:image", content: cat1.url },
+      { property: "og:image", content: "/assets/category-1.jpg.jpeg" },
     ],
   }),
   component: Gallery,
@@ -65,7 +65,7 @@ export const Route = createFileRoute("/gallery")({
 function Gallery() {
   return (
     <Layout>
-      <PageHero eyebrow="Visual Tour" title="Inside our clinic" subtitle="Traditional therapy rooms, in-house medicated oils and a serene, healing environment." image={bg.url} />
+      <PageHero eyebrow="Visual Tour" title="Inside our clinic" subtitle="Traditional therapy rooms, in-house medicated oils and a serene, healing environment." image="/assets/bg_1.jpg.jpeg" />
       <section className="container-page py-20">
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
           {images.map((img, i) => (
