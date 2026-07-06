@@ -164,7 +164,7 @@ export const treatments: Treatment[] = [
     slug: "obesity",
     title: "Obesity (Sthaulya)",
     short: "Reset metabolism, reduce Medha dhatu excess and rebuild vitality.",
-    image: "/newimages/obesity.jpg",
+    image: "/newimages/fat-loss.jpg",
     intro:
       "Healthy food leads to a healthy body and life. Fast-paced urban lifestyles have shifted eating habits toward fast foods, causing obesity along with sedentary living.",
     paragraphs: [
