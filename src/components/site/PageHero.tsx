@@ -5,7 +5,7 @@ import { Card3D } from "./Card3D";
 export function PageHero({ eyebrow, title, subtitle, image }: { eyebrow?: string; title: string; subtitle?: string; image?: string }) {
   return (
     <section className="relative overflow-hidden bg-primary pt-28 pb-20 md:pt-36 md:pb-28">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         {image ? (
           <>
             <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" />
