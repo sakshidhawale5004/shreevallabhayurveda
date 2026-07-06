@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Background3DElements() {
   return (
-    <div className="pointer-events-none fixed inset-0 -z-0 overflow-hidden mix-blend-screen">
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       {/* Golden Glowing Orb */}
       <motion.div
         animate={{
