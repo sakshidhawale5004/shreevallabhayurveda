@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
 const panchakarmaTherapies = [
   { name: "Vaman", desc: "Induced therapeutic vomiting to expel Kapha toxins", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1220&auto=format&fit=crop" },
   { name: "Virechana", desc: "Medicated purgation for Pitta cleansing", img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop" },
-  { name: "Basti", desc: "Medicated enema — the queen of Panchakarma", img: "https://images.unsplash.com/photo-1608283457904-4b5536553245?q=80&w=1033&auto=format&fit=crop" },
+  { name: "Basti", desc: "Medicated enema — the queen of Panchakarma", img: "/newimages/basti.jpg" },
   { name: "Nasya", desc: "Nasal administration to clear head, neck, senses", img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop" },
   { name: "Raktamokshana", desc: "Bloodletting for chronic skin & blood disorders", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1170&auto=format&fit=crop" },
 ];
