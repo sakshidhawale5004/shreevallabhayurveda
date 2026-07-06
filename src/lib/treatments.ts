@@ -25,7 +25,7 @@ export const treatments: Treatment[] = [
     slug: "heart",
     title: "Heart Disease, Diabetes & Blood Pressure",
     short: "Root-cause Ayurvedic care for cardiac wellness and metabolic balance.",
-    image: heart.url,
+    image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&w=987&auto=format&fit=crop",
     intro:
       "An unhealthy lifestyle with low physical activity and processed foods is the main cause of heart disease in India. Ayurveda addresses the root causes with diet, herbal preparations, therapies, yoga and pranayama.",
     paragraphs: [
@@ -45,7 +45,7 @@ export const treatments: Treatment[] = [
     slug: "stroke",
     title: "Stroke & Paralysis Rehabilitation",
     short: "Panchakarma-led neurological recovery for hemiplegia and hemiparesis.",
-    image: stroke.url,
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1220&auto=format&fit=crop",
     intro:
       "Paralysis is one of the most common disabilities following a stroke, usually on the side opposite to the brain damage. Ayurveda approaches recovery through nervous-system rejuvenation and targeted Panchakarma.",
     paragraphs: [
@@ -60,7 +60,7 @@ export const treatments: Treatment[] = [
     slug: "weight-loss",
     title: "Weight Loss — Fat to Fit",
     short: "Mindful nutrition, herbal support and metabolic reset for sustainable results.",
-    image: weight.url,
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1153&auto=format&fit=crop",
     intro:
       "Ayurveda focuses on mindful nutrition, stress reduction and cultivation of a balanced lifestyle. Many people look to its dietary principles and natural remedies when they want to lose weight sustainably.",
     paragraphs: [
@@ -75,7 +75,7 @@ export const treatments: Treatment[] = [
     slug: "hair",
     title: "Hair Loss & Premature Graying",
     short: "Khalitya management: pacify Pitta, nourish follicles, restore density.",
-    image: hair.url,
+    image: "https://images.unsplash.com/photo-1620609351052-a9b08f4cb760?q=80&w=987&auto=format&fit=crop",
     intro:
       "Hair loss is known as Khalitya in Ayurveda. Hair is a byproduct of bone formation; excess Pitta in the sebaceous gland or folliculitis can lead to hair loss and premature graying.",
     paragraphs: [
@@ -90,7 +90,7 @@ export const treatments: Treatment[] = [
     slug: "thyroid",
     title: "Thyroid & Hormonal Management",
     short: "Ayurvedic balancing of endocrine function — hypo, hyper and PCOS support.",
-    image: thyroid.url,
+    image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop",
     intro:
       "Thyroid dysfunctions can be correlated to Kapha and Vata & Pitta doshas — involving Rasa and Medha dhatu and Sweda mala.",
     paragraphs: [
@@ -105,7 +105,7 @@ export const treatments: Treatment[] = [
     slug: "infertility",
     title: "Infertility Management",
     short: "Panchakarma-based purification for both partners with proven conception outcomes.",
-    image: infer.url,
+    image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=987&auto=format&fit=crop",
     intro:
       "Ayurveda defines infertility as inability to conceive or carry a pregnancy to term. Ancient literature Atharvaveda extensively explores its treatment.",
     paragraphs: [
@@ -120,7 +120,7 @@ export const treatments: Treatment[] = [
     slug: "beauty",
     title: "Beauty Enhancement",
     short: "Herbal skincare, glow therapies and holistic radiance from within.",
-    image: beauty.url,
+    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop",
     intro:
       "Beauty Care in Ayurveda uses the purity of nature. Skin is the main canvas of beauty; herbal massage aids circulation of vital fluids for a natural glow.",
     paragraphs: [
@@ -135,7 +135,7 @@ export const treatments: Treatment[] = [
     slug: "pre-pregnancy",
     title: "Pre-Pregnancy Purification (Garbha Sanskar)",
     short: "Cleanse both parents for a healthy, intelligent, strong-immunity offspring.",
-    image: preg.url,
+    image: "https://images.unsplash.com/photo-1507120410856-1f35574c3b45?q=80&w=1170&auto=format&fit=crop",
     intro:
       "Children are the greatest gift. Ayurveda not only helps conception but also healthy conception — 'Chotta Parivar, Sukhi Parivar' — with strong offspring.",
     paragraphs: [
@@ -149,7 +149,7 @@ export const treatments: Treatment[] = [
     slug: "arthritis",
     title: "Arthritis (Sandhivata & Amavata)",
     short: "Joint regeneration through classical Panchakarma and targeted herbs.",
-    image: arth.url,
+    image: "https://images.unsplash.com/photo-1608283457904-4b5536553245?q=80&w=1033&auto=format&fit=crop",
     intro:
       "Arthritis is inflammation of joints leading to moderate to severe pain. Osteo-arthritis is the commonest, especially in post-menopausal women due to metabolic and hormonal changes.",
     paragraphs: [
@@ -164,7 +164,7 @@ export const treatments: Treatment[] = [
     slug: "obesity",
     title: "Obesity (Sthaulya)",
     short: "Reset metabolism, reduce Medha dhatu excess and rebuild vitality.",
-    image: obs.url,
+    image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2069&auto=format&fit=crop",
     intro:
       "Healthy food leads to a healthy body and life. Fast-paced urban lifestyles have shifted eating habits toward fast foods, causing obesity along with sedentary living.",
     paragraphs: [

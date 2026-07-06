@@ -20,11 +20,11 @@ export const Route = createFileRoute("/")({
 });
 
 const panchakarmaTherapies = [
-  { name: "Vaman", desc: "Induced therapeutic vomiting to expel Kapha toxins", img: "https://images.unsplash.com/photo-1555562762-c1f9da229a4a?q=80&w=1064&auto=format&fit=crop" },
-  { name: "Virechana", desc: "Medicated purgation for Pitta cleansing", img: "https://images.unsplash.com/photo-1608283458632-48243becc089?q=80&w=987&auto=format&fit=crop" },
-  { name: "Basti", desc: "Medicated enema — the queen of Panchakarma", img: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=987&auto=format&fit=crop" },
-  { name: "Nasya", desc: "Nasal administration to clear head, neck, senses", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1220&auto=format&fit=crop" },
-  { name: "Raktamokshana", desc: "Bloodletting for chronic skin & blood disorders", img: "https://images.unsplash.com/photo-1620609351025-a131b78297bd?q=80&w=987&auto=format&fit=crop" },
+  { name: "Vaman", desc: "Induced therapeutic vomiting to expel Kapha toxins", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1220&auto=format&fit=crop" },
+  { name: "Virechana", desc: "Medicated purgation for Pitta cleansing", img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop" },
+  { name: "Basti", desc: "Medicated enema — the queen of Panchakarma", img: "https://images.unsplash.com/photo-1608283457904-4b5536553245?q=80&w=1033&auto=format&fit=crop" },
+  { name: "Nasya", desc: "Nasal administration to clear head, neck, senses", img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop" },
+  { name: "Raktamokshana", desc: "Bloodletting for chronic skin & blood disorders", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1170&auto=format&fit=crop" },
 ];
 
 function Home() {
@@ -77,7 +77,7 @@ function Home() {
               <div className="relative z-10 w-full max-w-md mx-auto">
                 <Card3D className="p-3 bg-white/5 border border-white/20 backdrop-blur-2xl shadow-[0_30px_60px_rgba(0,0,0,0.5)] rounded-[2rem] overflow-hidden">
                   <div className="relative rounded-[1.5rem] overflow-hidden border border-white/10 shadow-inner">
-                    <img src="https://images.unsplash.com/photo-1608283457904-4b5536553245?q=80&w=1033&auto=format&fit=crop" alt="Ayurvedic Treatment" className="w-full h-auto object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700" />
+                    <img src="/assets/imageforherosection.png" alt="Ayurvedic Treatment" className="w-full h-auto object-cover aspect-[4/5] hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
                     <div className="absolute bottom-8 left-8 right-8">
                       <div className="inline-block px-4 py-1.5 bg-gold text-primary text-xs font-bold uppercase tracking-widest rounded-full mb-3 shadow-[0_0_15px_rgba(255,215,0,0.5)]">Premium Care</div>
