@@ -23,7 +23,7 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <Layout>
-      <PageHero eyebrow="About" title="Dr. Swapnil Bhanushali" subtitle="Director of Dr. Bhanushali's Shree Vallabh Ayurveda & Panchakarma — an authentic clinic devoted to root-cause healing." image={bg.url} />
+      <PageHero eyebrow="About" title="Dr. Swapnil Bhanushali" subtitle="Director of Dr. Bhanushali's Shree Vallabh Ayurveda & Panchakarma — an authentic clinic devoted to root-cause healing." image="/newimages/hero-about.jpg" />
 
       <section className="container-page py-20 grid lg:grid-cols-5 gap-14 items-start">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">

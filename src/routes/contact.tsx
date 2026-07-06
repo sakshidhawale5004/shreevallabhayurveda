@@ -23,7 +23,7 @@ function Contact() {
   const [sent, setSent] = useState(false);
   return (
     <Layout>
-      <PageHero eyebrow="Get in Touch" title="Book your consultation" subtitle="Two clinic locations across Navi Mumbai. Speak with our team to plan your personalised program." image={bg.url} />
+      <PageHero eyebrow="Get in Touch" title="Book your consultation" subtitle="Two clinic locations across Navi Mumbai. Speak with our team to plan your personalised program." image="/newimages/hero-contact.jpg" />
 
       <section className="container-page py-20 grid lg:grid-cols-3 gap-6">
         <Card3D className="p-8">

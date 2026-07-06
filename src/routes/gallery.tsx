@@ -44,7 +44,7 @@ export const Route = createFileRoute("/gallery")({
 function Gallery() {
   return (
     <Layout>
-      <PageHero eyebrow="Visual Tour" title="Inside our clinic" subtitle="Traditional therapy rooms, in-house medicated oils and a serene, healing environment." image="/assets/bg_1.jpg.jpeg" />
+      <PageHero eyebrow="Visual Tour" title="Inside our clinic" subtitle="Traditional therapy rooms, in-house medicated oils and a serene, healing environment." image="/newimages/hero-gallery.jpg" />
       <section className="container-page py-20">
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 space-y-5">
           {images.map((img, i) => (

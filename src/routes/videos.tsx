@@ -29,7 +29,7 @@ export const Route = createFileRoute("/videos")({
 function Videos() {
   return (
     <Layout>
-      <PageHero eyebrow="Media" title="Videos, Interviews & Talks" subtitle="Insights from Dr. Bhanushali — Ayurveda for modern life, patient journeys and classical Panchakarma explained." image={bg.url} />
+      <PageHero eyebrow="Media" title="Videos, Interviews & Talks" subtitle="Insights from Dr. Bhanushali — Ayurveda for modern life, patient journeys and classical Panchakarma explained." image="/newimages/hero-videos.jpg" />
       <section className="container-page py-20 grid md:grid-cols-2 gap-8">
         {videos.map((v, i) => (
           <motion.div key={v.id + i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 2) * 0.1 }} className="card-3d overflow-hidden">
