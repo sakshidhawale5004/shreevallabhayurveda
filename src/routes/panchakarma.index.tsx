@@ -42,7 +42,7 @@ const therapies = [
   },
   { 
     name: "Basti", 
-    image: "/newimages/basti4.jpg", 
+    image: "/newimages/basti6.jpg", 
     to: "/panchakarma/basti",
     desc: "Medicated enema therapy, considered the mother of all Panchakarma treatments."
   },
