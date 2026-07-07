@@ -63,16 +63,16 @@ export function Header() {
           </a>
         </div>
       </div>
-      <div className="container-page flex items-center justify-between py-3">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo.url} alt="Shree Vallabh Ayurveda" className="h-[120px] w-auto drop-shadow-sm transition-transform hover:scale-105" />
+      <div className="max-w-[1400px] w-full mx-auto px-4 lg:px-8 flex items-center justify-between py-2 xl:py-3">
+        <Link to="/" className="flex items-center gap-3 shrink-0">
+          <img src={logo.url} alt="Shree Vallabh Ayurveda" className="h-[80px] xl:h-[105px] w-auto drop-shadow-sm transition-transform hover:scale-105" />
         </Link>
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
           {nav.slice(0, 2).map((n) => (
-            <Link key={n.to} to={n.to} className="px-3 py-2 text-sm font-medium hover:text-primary transition" activeProps={{ className: "text-primary" }}>{n.label}</Link>
+            <Link key={n.to} to={n.to} className="px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-medium hover:text-primary transition whitespace-nowrap" activeProps={{ className: "text-primary" }}>{n.label}</Link>
           ))}
           <div className="relative" onMouseEnter={() => setTreatOpen(true)} onMouseLeave={() => setTreatOpen(false)}>
-            <button className="px-3 py-2 text-sm font-medium hover:text-primary transition">Treatments ▾</button>
+            <button className="px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-medium hover:text-primary transition whitespace-nowrap">Treatments ▾</button>
             {treatOpen && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-72">
                 <div className="card-3d p-2 border border-border bg-background/95 backdrop-blur-md">
@@ -84,7 +84,7 @@ export function Header() {
             )}
           </div>
           <div className="relative" onMouseEnter={() => setPanchOpen(true)} onMouseLeave={() => setPanchOpen(false)}>
-            <Link to="/panchakarma" className="px-3 py-2 text-sm font-medium hover:text-primary transition block">Panchakarma ▾</Link>
+            <Link to="/panchakarma" className="px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-medium hover:text-primary transition block whitespace-nowrap">Panchakarma ▾</Link>
             {panchOpen && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48">
                 <div className="card-3d p-2 border border-border bg-background/95 backdrop-blur-md">
@@ -96,9 +96,9 @@ export function Header() {
             )}
           </div>
           {nav.slice(2).map((n) => (
-            <Link key={n.to} to={n.to} className="px-3 py-2 text-sm font-medium hover:text-primary transition" activeProps={{ className: "text-primary" }}>{n.label}</Link>
+            <Link key={n.to} to={n.to} className="px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-medium hover:text-primary transition whitespace-nowrap" activeProps={{ className: "text-primary" }}>{n.label}</Link>
           ))}
-          <Link to="/contact" className="btn-gold ml-2 text-sm">Book Appointment</Link>
+          <Link to="/contact" className="btn-gold ml-2 xl:ml-4 text-[13px] xl:text-sm px-4 py-2 xl:px-5 xl:py-2.5 whitespace-nowrap">Book Appointment</Link>
         </nav>
         <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <X /> : <Menu />}
