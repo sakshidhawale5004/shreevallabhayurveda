@@ -50,7 +50,7 @@ export function Header() {
           animation: scroll 30s linear infinite;
         }
       `}</style>
-      <div className="bg-gold text-[#0a192f] overflow-hidden py-1.5 whitespace-nowrap text-xs font-semibold tracking-wide border-b border-white/20">
+      <div className="bg-gold text-[#0a192f] overflow-hidden py-2 whitespace-nowrap text-[11px] font-bold tracking-[0.15em] uppercase border-b border-white/20 shadow-inner">
         <div className="inline-block animate-scroll pr-8">
           Mumbai and Navi Mumbai's First need based *therapeutic Ayurved Hospital Paralysis * Weight loss program * Parkinson's disease * Kidney failure * Chronic acidity * piles * fissure * fistula etc
         </div>
