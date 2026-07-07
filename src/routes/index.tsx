@@ -156,10 +156,16 @@ function Home() {
           <Link to="/about" className="btn-primary mt-8">Read Doctor's Story</Link>
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 gap-4">
-          <Card3D><img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
-          <Card3D className="mt-8"><img src="/newimages/homepage.jpg" alt="" className="w-full h-56 object-cover" /></Card3D>
-          <Card3D className="-mt-4"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
-          <Card3D className="mt-4"><img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-56 object-cover" /></Card3D>
+          <div className="flex flex-col gap-4 mt-8">
+            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1220&auto=format&fit=crop" alt="Vaman" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Vaman</div></div></Card3D>
+            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="/newimages/basti.jpg" alt="Basti" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Basti</div></div></Card3D>
+            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1170&auto=format&fit=crop" alt="Raktamokshana" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Raktamokshana</div></div></Card3D>
+          </div>
+          <div className="flex flex-col gap-4">
+            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="/newimages/virechan.webp" alt="Virechana" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Virechana</div></div></Card3D>
+            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="/newimages/Nasya.jpg" alt="Nasya" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Nasya</div></div></Card3D>
+            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="/newimages/ayurveda.jpg" alt="Rasayana" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Rasayana</div></div></Card3D>
+          </div>
         </motion.div>
       </section>
 
