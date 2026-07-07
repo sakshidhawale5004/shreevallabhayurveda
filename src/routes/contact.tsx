@@ -35,7 +35,7 @@ function Contact() {
           </div>
         </Card3D>
         <Card3D className="p-8">
-          <h3 className="font-display text-2xl text-primary">Nerul Clinic</h3>
+          <h3 className="font-display text-2xl text-primary">Ayurveda Hospital, Nerul</h3>
           <p className="mt-2 text-muted-foreground text-sm">First Floor, A-53, Sangharsh Society, Above City Medical, Opposite Sarsole Bus Depot, Nerul Sector 6, Navi Mumbai 400706.</p>
           <div className="mt-4 space-y-2 text-sm">
             <a href="tel:+919225301077" className="flex items-center gap-2"><Phone className="h-4 w-4 text-gold" /> +91 9225 301 077</a>
