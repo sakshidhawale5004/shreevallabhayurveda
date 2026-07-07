@@ -23,20 +23,20 @@ export const Route = createFileRoute("/about")({
 function About() {
   return (
     <Layout>
-      <PageHero eyebrow="About" title="Dr. Swapnil Bhanushali" subtitle="Director of Dr. Bhanushali's Shree Vallabh Ayurveda & Panchakarma — an authentic clinic devoted to root-cause healing." image="/newimages/hero-about.jpg" />
+      <PageHero eyebrow="About" title="Dr. Swapnil Bhanushali" subtitle="M.D. (Ayurveda) | Director of Dr. Bhanushali's Shree Vallabh Ayurveda & Panchakarma — an authentic clinic devoted to root-cause healing." image="/newimages/hero-about.jpg" />
 
       <section className="container-page py-20 grid lg:grid-cols-5 gap-14 items-start">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:col-span-2">
-          <Card3D><img src="/assets/product-15.jpg.jpeg" alt="Dr. Swapnil Bhanushali" className="w-full aspect-[4/5] object-cover" /></Card3D>
+          <Card3D><img src="/assets/product-15.jpg.jpeg" alt="Dr. Swapnil Bhanushali, M.D. Ayurveda" className="w-full aspect-[4/5] object-cover" /></Card3D>
         </motion.div>
         <div className="lg:col-span-3">
           <p className="text-primary uppercase tracking-[0.25em] text-xs font-semibold">All About Dr. Bhanushali</p>
           <h2 className="font-display text-4xl md:text-5xl mt-2 leading-tight">A dedicated life in service of authentic Ayurveda.</h2>
           <div className="mt-6 space-y-5 text-muted-foreground text-lg leading-relaxed">
-            <p>Dr Swapnil Bhanushali is the director of the Dr Bhanushali’s Shree Vallabh Ayurveda and Panchakarma clinic; an authentic Ayurveda and Panchakarma clinic devoted to helping the patients and families with the optimum use of Ayurveda and Panchakarma to address the root cause of the disease. Dr Bhanushali’s Shree Vallabh Ayurveda clinic is the leading provider of true health and sustainable health service based on proven principles of Ayurveda..</p>
-            <p>The clinic’s patient portfolio includes more than <strong className="text-foreground">10000 patients</strong>. The complete dedicated team of Dr Swapnil Bhanushali and his Panchakarma therapist is duty bound towards patients; to carry out panchakarma adequately.</p>
+            <p><strong className="text-foreground">Dr. Swapnil Bhanushali (M.D. Ayurveda)</strong> is the director of Dr. Bhanushali’s Shree Vallabh Ayurveda and Panchakarma clinic; an authentic Ayurveda and Panchakarma clinic devoted to helping patients and families with the optimum use of Ayurveda and Panchakarma to address the root cause of diseases. Dr. Bhanushali’s Shree Vallabh Ayurveda clinic is the leading provider of true and sustainable health services based on proven principles of Ayurveda.</p>
+            <p>The clinic’s patient portfolio includes more than <strong className="text-foreground">10,000 patients</strong>. The complete dedicated team of Dr. Swapnil Bhanushali and his Panchakarma therapists are duty-bound towards patients to carry out Panchakarma adequately and effectively.</p>
             <blockquote className="border-l-4 border-gold pl-5 italic text-foreground">
-              Our mission is to “Maintain the health of healthy individual and treat the diseased individual with Ayurveda to regain the true health”
+              Our mission is to “Maintain the health of a healthy individual and treat the diseased individual with Ayurveda to regain true health.”
             </blockquote>
           </div>
         </div>
