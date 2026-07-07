@@ -16,9 +16,18 @@ const treatments = [
   { to: "/treatments/obesity", label: "Obesity" },
 ];
 
+const panchaKarma = [
+  { to: "/panchakarma/vaman", label: "Vaman" },
+  { to: "/panchakarma/virechan", label: "Virechan" },
+  { to: "/panchakarma/nassya", label: "Nassya" },
+  { to: "/panchakarma/raktamoshan", label: "Raktamokshan" },
+  { to: "/panchakarma/basti", label: "Basti" },
+];
+
 const nav = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  { to: "/garbhasanskar", label: "Garbhasanskar" },
   { to: "/gallery", label: "Gallery" },
   { to: "/testimonials", label: "Testimonials" },
   { to: "/videos", label: "Videos" },
@@ -28,6 +37,7 @@ const nav = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [treatOpen, setTreatOpen] = useState(false);
+  const [panchOpen, setPanchOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 backdrop-blur-lg bg-background/80 border-b border-border/60">
       <div className="bg-primary text-primary-foreground text-xs">
@@ -50,9 +60,21 @@ export function Header() {
             <button className="px-3 py-2 text-sm font-medium hover:text-primary transition">Treatments ▾</button>
             {treatOpen && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-72">
-                <div className="card-3d p-2 border border-border">
+                <div className="card-3d p-2 border border-border bg-background/95 backdrop-blur-md">
                   {treatments.map((t) => (
                     <Link key={t.to} to={t.to} className="block px-3 py-2 rounded-md text-sm hover:bg-secondary transition">{t.label}</Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="relative" onMouseEnter={() => setPanchOpen(true)} onMouseLeave={() => setPanchOpen(false)}>
+            <Link to="/panchakarma" className="px-3 py-2 text-sm font-medium hover:text-primary transition block">Panchakarma ▾</Link>
+            {panchOpen && (
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-48">
+                <div className="card-3d p-2 border border-border bg-background/95 backdrop-blur-md">
+                  {panchaKarma.map((t) => (
+                    <Link key={t.to} to={t.to as any} className="block px-3 py-2 rounded-md text-sm hover:bg-secondary transition">{t.label}</Link>
                   ))}
                 </div>
               </div>
@@ -78,6 +100,16 @@ export function Header() {
               <div className="pl-4 flex flex-col gap-1 mt-2">
                 {treatments.map((t) => (
                   <Link key={t.to} to={t.to} className="py-1.5 text-sm" onClick={() => setOpen(false)}>{t.label}</Link>
+                ))}
+              </div>
+            </details>
+            <details className="py-2">
+              <summary className="cursor-pointer font-medium">
+                <Link to="/panchakarma" onClick={() => setOpen(false)}>Panchakarma</Link>
+              </summary>
+              <div className="pl-4 flex flex-col gap-1 mt-2">
+                {panchaKarma.map((t) => (
+                  <Link key={t.to} to={t.to as any} className="py-1.5 text-sm" onClick={() => setOpen(false)}>{t.label}</Link>
                 ))}
               </div>
             </details>
