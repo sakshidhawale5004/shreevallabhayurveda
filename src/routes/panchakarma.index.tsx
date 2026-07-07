@@ -48,7 +48,7 @@ const therapies = [
   },
   { 
     name: "Allied Karma", 
-    image: "/assets/3JANUBASTI.jpg.jpeg", 
+    image: "/newimages/ALLIEDKARMABGIMAGE.jpg", 
     to: "/panchakarma/allied-karma",
     desc: "Supportive therapies like Shirodhara, Kati Basti, and Janu Basti for localized relief."
   },
