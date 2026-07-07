@@ -1,14 +1,28 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Youtube, Instagram, Facebook } from "lucide-react";
+import { motion } from "framer-motion";
 import logo from "@/assets/logo.asset.json";
 
 export function Footer() {
   return (
     <footer className="mt-24 bg-primary text-primary-foreground">
       <div className="container-page py-14 grid gap-10 md:grid-cols-4">
-        <div>
-          <img src={logo.url} alt="Shree Vallabh Ayurveda" className="h-16 w-auto bg-background rounded-lg p-2 mb-4" />
-          <p className="text-sm opacity-80">Dr. Bhanushali's Shree Vallabh Ayurveda & Panchakarma — authentic classical Ayurveda for root-cause healing.</p>
+        <div className="flex flex-col">
+          <div>
+            <img src={logo.url} alt="Shree Vallabh Ayurveda" className="h-16 w-auto bg-background rounded-lg p-2 mb-4" />
+            <p className="text-sm opacity-80">Dr. Bhanushali's Shree Vallabh Ayurveda & Panchakarma — authentic classical Ayurveda for root-cause healing.</p>
+          </div>
+          <div className="mt-8 flex gap-4">
+            <motion.a whileHover={{ scale: 1.15, y: -2 }} whileTap={{ scale: 0.95 }} href="https://youtube.com/@drswapnilbhanushali?si=3UnlbM-xnEytw-Gs" target="_blank" rel="noreferrer" className="bg-primary-foreground/10 p-2.5 rounded-full hover:bg-gold hover:text-primary transition-colors shadow-sm">
+              <Youtube className="h-5 w-5" />
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.15, y: -2 }} whileTap={{ scale: 0.95 }} href="https://www.instagram.com/swapnilayu?igsh=bml4bW5mdDd3a2xv" target="_blank" rel="noreferrer" className="bg-primary-foreground/10 p-2.5 rounded-full hover:bg-gold hover:text-primary transition-colors shadow-sm">
+              <Instagram className="h-5 w-5" />
+            </motion.a>
+            <motion.a whileHover={{ scale: 1.15, y: -2 }} whileTap={{ scale: 0.95 }} href="https://www.facebook.com/@drswapnilbhanushali/?hr=1&wtsid=rdr_0SlZ9deVT8mdci6kL" target="_blank" rel="noreferrer" className="bg-primary-foreground/10 p-2.5 rounded-full hover:bg-gold hover:text-primary transition-colors shadow-sm">
+              <Facebook className="h-5 w-5" />
+            </motion.a>
+          </div>
         </div>
         <div>
           <h4 className="font-display text-xl mb-4 text-gold">Explore</h4>
