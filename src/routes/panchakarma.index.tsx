@@ -36,7 +36,7 @@ const therapies = [
   },
   { 
     name: "Raktamokshan", 
-    image: "/newimages/raktamokshana4.jpg", 
+    image: "/newimages/rakstmohan.webp", 
     to: "/panchakarma/raktamoshan",
     desc: "Blood-letting therapy to detoxify Raktadhatu and cure chronic skin disorders."
   },
