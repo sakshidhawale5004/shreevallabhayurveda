@@ -72,7 +72,7 @@ export function Header() {
             <Link key={n.to} to={n.to} className="px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-medium hover:text-primary transition whitespace-nowrap" activeProps={{ className: "text-primary" }}>{n.label}</Link>
           ))}
           <div className="relative" onMouseEnter={() => setTreatOpen(true)} onMouseLeave={() => setTreatOpen(false)}>
-            <button className="px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-medium hover:text-primary transition whitespace-nowrap">Treatments ▾</button>
+            <Link to="/treatments" className="px-2 xl:px-3 py-2 text-[13px] xl:text-sm font-medium hover:text-primary transition block whitespace-nowrap">Treatments ▾</Link>
             {treatOpen && (
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-72">
                 <div className="card-3d p-2 border border-border bg-background/95 backdrop-blur-md">
@@ -111,7 +111,9 @@ export function Header() {
               <Link key={n.to} to={n.to} className="py-2" onClick={() => setOpen(false)}>{n.label}</Link>
             ))}
             <details className="py-2">
-              <summary className="cursor-pointer font-medium">Treatments</summary>
+              <summary className="cursor-pointer font-medium">
+                <Link to="/treatments" onClick={() => setOpen(false)}>Treatments</Link>
+              </summary>
               <div className="pl-4 flex flex-col gap-1 mt-2">
                 {treatments.map((t) => (
                   <Link key={t.to} to={t.to} className="py-1.5 text-sm" onClick={() => setOpen(false)}>{t.label}</Link>
