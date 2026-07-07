@@ -68,6 +68,23 @@ function Basti() {
           </ul>
         </Card3D>
       </section>
+
+      <section className="container-page pb-24">
+        <h3 className="font-display text-4xl mb-10 text-center text-foreground">
+          Treatment Gallery
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/basti1.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/basti2.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/basti.jpg" alt="Basti Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
