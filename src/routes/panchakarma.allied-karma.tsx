@@ -30,7 +30,7 @@ function AlliedKarma() {
         eyebrow="Panchakarma" 
         title="Allied Karma" 
         subtitle="Specialized localized therapies to complement deep detoxification." 
-        image="/assets/3JANUBASTI.jpg.jpeg" 
+        image="/newimages/ALLIEDKARMA.png" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
         <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
@@ -80,15 +80,9 @@ function AlliedKarma() {
         <h3 className="font-display text-4xl mb-10 text-center text-foreground">
           Treatment Gallery
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="max-w-3xl mx-auto">
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/assets/3JANUBASTI.jpg.jpeg" alt="Allied Karma Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
-          </div>
-          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/assets/pizhichil.jpg.jpeg" alt="Allied Karma Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
-          </div>
-          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/panchakarma.jpg" alt="Allied Karma Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/ALLIEDKARMA.png" alt="Allied Karma Treatment" className="w-full object-cover hover:scale-105 transition-transform duration-700" />
           </div>
         </div>
       </section>
