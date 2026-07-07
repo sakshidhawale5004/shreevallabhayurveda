@@ -21,7 +21,7 @@ function Garbhasanskar() {
         eyebrow="Specialty" 
         title="Garbhasanskar" 
         subtitle="Ayurvedic Medicinal Garbhasanskar for a healthy pregnancy and a divine child." 
-        image="/assets/product-15.jpg.jpeg" 
+        image="/newimages/garbhasanskar.jpg" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -60,6 +60,23 @@ function Garbhasanskar() {
               Ensures optimum growth and development of the fetus, enhances the child's immunity, intelligence, and emotional quotient (EQ) right from the womb.
             </p>
           </Card3D>
+        </div>
+      </section>
+
+      <section className="container-page pb-24">
+        <h3 className="font-display text-4xl mb-10 text-center text-foreground">
+          Treatment Gallery
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/GARBHASANKAR1.jpg" alt="Garbhasanskar Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/GARBHASANKAR2.jpg" alt="Garbhasanskar Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/GARBHASANKAR3.jpg" alt="Garbhasanskar Process" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
         </div>
       </section>
     </Layout>
