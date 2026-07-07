@@ -22,6 +22,7 @@ const panchaKarma = [
   { to: "/panchakarma/nassya", label: "Nassya" },
   { to: "/panchakarma/raktamoshan", label: "Raktamokshan" },
   { to: "/panchakarma/basti", label: "Basti" },
+  { to: "/panchakarma/allied-karma", label: "Allied-Karma" },
 ];
 
 const nav = [
@@ -40,6 +41,20 @@ export function Header() {
   const [panchOpen, setPanchOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 backdrop-blur-lg bg-background/80 border-b border-border/60">
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(100vw); }
+          100% { transform: translateX(-100%); }
+        }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+      `}</style>
+      <div className="bg-gold text-primary-foreground overflow-hidden py-1.5 whitespace-nowrap text-xs font-semibold tracking-wide border-b border-white/20">
+        <div className="inline-block animate-scroll pr-8">
+          Mumbai and Navi Mumbai's First need based *therapeutic Ayurved Hospital Paralysis * Weight loss program * Parkinson's disease * Kidney failure * Chronic acidity * piles * fissure * fistula etc
+        </div>
+      </div>
       <div className="bg-primary text-primary-foreground text-xs">
         <div className="container-page flex justify-between py-2">
           <span className="hidden sm:inline">Authentic Ayurveda & Panchakarma · Since 10,000+ patients treated</span>

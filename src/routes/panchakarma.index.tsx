@@ -19,6 +19,7 @@ const therapies = [
   { name: "NASSYA", image: "/newimages/Nasya.jpg", to: "/panchakarma/nassya" },
   { name: "RAKTAMOSHAN", image: "/newimages/raktha.jpg", to: "/panchakarma/raktamoshan" },
   { name: "BASTI", image: "/newimages/basti.jpg", to: "/panchakarma/basti" },
+  { name: "ALLIED-KARMA", image: "/newimages/ayurveda.jpg", to: "/panchakarma/allied-karma" },
 ];
 
 function Panchakarma() {

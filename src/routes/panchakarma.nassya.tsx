@@ -37,31 +37,35 @@ function Nassya() {
         image="/newimages/Nasya.jpg" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
-        <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-          <p className="text-primary uppercase tracking-[0.2em] text-xs font-semibold">About Nassya</p>
-          <h2 className="font-display text-4xl text-foreground mb-6">Urdhvanga Detoxification</h2>
-          <p>
-            It is one of the Panchkarma procedures mentioned in Ayurveda. It is a process by which drug is administered through the nostrils.
-          </p>
-          <p>
-            This procedure detoxifies <strong>"urdhvanga"</strong> (body parts present above the shoulders). It can be done on a daily basis as well for the maintenance and unimpaired function of the urdhvanga.
-          </p>
-          <h3 className="font-display text-2xl text-foreground mt-8 mb-4">Procedure Details</h3>
-          <p>
-            It also has a pre-procedure, procedure, and after-procedure. All procedures are typically done in a single sitting of one hour and provide rapid relief.
-          </p>
+        <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
+          <div>
+            <p className="text-primary uppercase tracking-[0.2em] text-sm font-bold mb-2">More Information</p>
+            <h2 className="font-display text-4xl text-foreground mb-6 leading-tight">Urdhvanga Detoxification</h2>
+            <p className="mb-6 font-medium text-foreground/80">
+              It is one of the Panchkarma procedures mentioned in Ayurveda. It is a process by which drug is administered through the nostrils.
+            </p>
+            <p>
+              This procedure detoxifies <strong>"urdhvanga"</strong> (body parts present above the shoulders). It can be done on a daily basis as well for the maintenance and unimpaired function of the urdhvanga.
+            </p>
+          </div>
+          <div className="bg-secondary/40 p-8 rounded-2xl border border-gold/30 shadow-lg">
+            <h3 className="font-display text-2xl text-foreground mb-4">Procedure Details</h3>
+            <p className="text-foreground/80 font-medium">
+              It also has a pre-procedure, procedure, and after-procedure. All procedures are typically done in a single sitting of one hour and provide rapid relief.
+            </p>
+          </div>
         </div>
-        <Card3D className="p-8 md:p-12 bg-secondary/30 border-gold/20">
-          <h3 className="font-display text-3xl mb-6 text-foreground flex items-center gap-3">
-            <Stethoscope className="text-gold h-8 w-8" />
+        <Card3D className="p-8 md:p-12 bg-secondary/30 border-gold/20 shadow-xl">
+          <h3 className="font-display text-4xl mb-6 text-foreground flex items-center gap-3">
+            <Stethoscope className="text-gold h-10 w-10" />
             Indications
           </h3>
-          <p className="mb-6 text-muted-foreground">Nassya can be used in the treatment of all diseases occurring in the organs above the shoulders, including:</p>
-          <ul className="grid sm:grid-cols-2 gap-4">
+          <p className="mb-8 text-xl text-muted-foreground">Nassya can be used in the treatment of all diseases occurring in the organs above the shoulders, including:</p>
+          <ul className="grid sm:grid-cols-1 gap-5 text-lg">
             {uses.map((use) => (
-              <li key={use} className="flex items-start gap-3">
-                <CheckCircle2 className="h-5 w-5 text-gold shrink-0 mt-0.5" />
-                <span className="text-foreground/80">{use}</span>
+              <li key={use} className="flex items-start gap-4">
+                <CheckCircle2 className="h-6 w-6 text-gold shrink-0 mt-0.5" />
+                <span className="text-foreground/80 font-medium">{use}</span>
               </li>
             ))}
           </ul>
