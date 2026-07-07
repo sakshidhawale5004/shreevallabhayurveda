@@ -7,7 +7,8 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import logo from "../assets/logo.asset.json";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -114,9 +115,29 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Hide loader after a brief delay for a polished entrance effect
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
+      {loading && (
+        <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background">
+          <div className="relative animate-pulse flex flex-col items-center">
+            <img 
+              src={logo.url} 
+              alt="Loading Shree Vallabh Ayurveda..." 
+              className="h-[140px] md:h-[180px] w-auto drop-shadow-xl"
+            />
+          </div>
+        </div>
+      )}
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
