@@ -14,12 +14,12 @@ export const Route = createFileRoute("/panchakarma/")({
 });
 
 const therapies = [
-  { name: "VAMAN", image: "/newimages/vaman.png", to: "/panchakarma/vaman" },
+  { name: "VAMAN", image: "/newimages/vaman.jpg", to: "/panchakarma/vaman" },
   { name: "VIRECHAN", image: "/newimages/virechan.webp", to: "/panchakarma/virechan" },
   { name: "NASSYA", image: "/newimages/Nasya.jpg", to: "/panchakarma/nassya" },
-  { name: "RAKTAMOSHAN", image: "/newimages/raktha.jpg", to: "/panchakarma/raktamoshan" },
+  { name: "RAKTAMOSHAN", image: "/assets/product-6.jpg.jpeg", to: "/panchakarma/raktamoshan" },
   { name: "BASTI", image: "/newimages/basti.jpg", to: "/panchakarma/basti" },
-  { name: "ALLIED-KARMA", image: "/newimages/ayurveda.jpg", to: "/panchakarma/allied-karma" },
+  { name: "ALLIED-KARMA", image: "/assets/3JANUBASTI.jpg.jpeg", to: "/panchakarma/allied-karma" },
 ];
 
 function Panchakarma() {

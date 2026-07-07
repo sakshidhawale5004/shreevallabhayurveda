@@ -34,7 +34,7 @@ function Raktamoshan() {
         eyebrow="Panchakarma" 
         title="Raktamokshan" 
         subtitle="Blood-letting therapy to detoxify Raktadhatu." 
-        image="/newimages/raktha.jpg" 
+        image="/assets/product-6.jpg.jpeg" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
         <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
