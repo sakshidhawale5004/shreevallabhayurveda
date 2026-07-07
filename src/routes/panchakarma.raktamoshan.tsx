@@ -34,7 +34,7 @@ function Raktamoshan() {
         eyebrow="Panchakarma" 
         title="Raktamokshan" 
         subtitle="Blood-letting therapy to detoxify Raktadhatu." 
-        image="/newimages/rakstmohan.webp" 
+        image="/newimages/raktamokshana4.jpg" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
         <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
@@ -81,10 +81,10 @@ function Raktamoshan() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/leech.jpg" alt="Raktamokshan Leech Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/raktamokshana4.jpg" alt="Raktamokshan Leech Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/LEECH1.jpg" alt="Raktamokshan Leech Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/rk6.jpg" alt="Raktamokshan Leech Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
             <img src="/newimages/leech2.jpg" alt="Raktamokshan Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />

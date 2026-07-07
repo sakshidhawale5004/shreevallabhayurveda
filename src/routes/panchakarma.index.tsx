@@ -17,8 +17,8 @@ const therapies = [
   { name: "VAMAN", image: "/newimages/vaman.jpg", to: "/panchakarma/vaman" },
   { name: "VIRECHAN", image: "/newimages/virechan.webp", to: "/panchakarma/virechan" },
   { name: "NASSYA", image: "/newimages/Nasya.jpg", to: "/panchakarma/nassya" },
-  { name: "RAKTAMOSHAN", image: "/assets/product-6.jpg.jpeg", to: "/panchakarma/raktamoshan" },
-  { name: "BASTI", image: "/newimages/basti.jpg", to: "/panchakarma/basti" },
+  { name: "RAKTAMOSHAN", image: "/newimages/raktamokshana4.jpg", to: "/panchakarma/raktamoshan" },
+  { name: "BASTI", image: "/newimages/basti4.jpg", to: "/panchakarma/basti" },
   { name: "ALLIED-KARMA", image: "/assets/3JANUBASTI.jpg.jpeg", to: "/panchakarma/allied-karma" },
 ];
 
@@ -29,7 +29,7 @@ function Panchakarma() {
         eyebrow="Treatments" 
         title="Panchakarma" 
         subtitle="The five classical purification therapies of Ayurveda for complete detoxification and rejuvenation." 
-        image="/newimages/basti.jpg" 
+        image="/newimages/basti4.jpg" 
       />
       <section className="container-page py-24 min-h-[50vh] flex flex-col items-center justify-center">
         <h2 className="font-display text-4xl mb-16 text-center text-primary">Our Core Therapies</h2>
