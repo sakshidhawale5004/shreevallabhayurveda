@@ -30,7 +30,7 @@ function AlliedKarma() {
         eyebrow="Panchakarma" 
         title="Allied Karma" 
         subtitle="Specialized localized therapies to complement deep detoxification." 
-        image="/newimages/ALLIEDKARMA.png" 
+        image="/newimages/ALLIEDKARMABGIMAGE.jpg" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
         <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
