@@ -65,7 +65,7 @@ export function Header() {
       </div>
       <div className="container-page flex items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo.url} alt="Shree Vallabh Ayurveda" className="h-[72px] w-auto drop-shadow-sm" />
+          <img src={logo.url} alt="Shree Vallabh Ayurveda" className="h-[120px] w-auto drop-shadow-sm transition-transform hover:scale-105" />
         </Link>
         <nav className="hidden lg:flex items-center gap-1">
           {nav.slice(0, 2).map((n) => (
