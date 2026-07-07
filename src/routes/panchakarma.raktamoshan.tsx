@@ -84,7 +84,16 @@ function Raktamoshan() {
             <img src="/newimages/raktamokshana4.jpg" alt="Raktamokshan Leech Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/raktamokshana5.jpg" alt="Raktamokshan Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
             <img src="/newimages/rk6.jpg" alt="Raktamokshan Leech Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/leech.jpg" alt="Raktamokshan Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/LEECH1.jpg" alt="Raktamokshan Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
             <img src="/newimages/leech2.jpg" alt="Raktamokshan Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />

@@ -83,6 +83,15 @@ function Basti() {
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
             <img src="/newimages/basti6.jpg" alt="Basti Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/basti1.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/basti2.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/BASTI1 (2).jpg" alt="Basti Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
         </div>
       </section>
     </Layout>
