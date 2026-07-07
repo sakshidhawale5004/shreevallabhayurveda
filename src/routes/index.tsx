@@ -22,9 +22,9 @@ export const Route = createFileRoute("/")({
 const panchakarmaTherapies = [
   { name: "Vaman", desc: "Induced therapeutic vomiting to expel Kapha toxins", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1220&auto=format&fit=crop" },
   { name: "Virechana", desc: "Medicated purgation for Pitta cleansing", img: "/newimages/virechan.webp" },
-  { name: "Basti", desc: "Medicated enema — the queen of Panchakarma", img: "/newimages/basti.jpg" },
+  { name: "Basti", desc: "Medicated enema — the queen of Panchakarma", img: "/newimages/basti4.jpg" },
   { name: "Nasya", desc: "Nasal administration to clear head, neck, senses", img: "/newimages/Nasya.jpg" },
-  { name: "Raktamokshana", desc: "Bloodletting for chronic skin & blood disorders", img: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1170&auto=format&fit=crop" },
+  { name: "Raktamokshana", desc: "Bloodletting for chronic skin & blood disorders", img: "/newimages/raktamokshana4.jpg" },
 ];
 
 function Home() {
@@ -158,8 +158,8 @@ function Home() {
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid grid-cols-2 gap-4">
           <div className="flex flex-col gap-4 mt-8">
             <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1220&auto=format&fit=crop" alt="Vaman" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Vaman</div></div></Card3D>
-            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="/newimages/basti.jpg" alt="Basti" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Basti</div></div></Card3D>
-            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1170&auto=format&fit=crop" alt="Raktamokshana" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Raktamokshana</div></div></Card3D>
+            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="/newimages/basti4.jpg" alt="Basti" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Basti</div></div></Card3D>
+            <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="/newimages/raktamokshana4.jpg" alt="Raktamokshana" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Raktamokshana</div></div></Card3D>
           </div>
           <div className="flex flex-col gap-4">
             <Card3D><div className="relative group overflow-hidden rounded-2xl"><img src="/newimages/virechan.webp" alt="Virechana" className="w-full h-40 object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white font-medium">Virechana</div></div></Card3D>
