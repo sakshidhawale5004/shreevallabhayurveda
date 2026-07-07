@@ -208,17 +208,22 @@ function Home() {
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
             {panchakarmaTherapies.map((p) => (
-              <div key={p.name} className="group relative overflow-hidden rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover-lift hover:-translate-y-2">
+              <Link to="/panchakarma" key={p.name} className="block group relative overflow-hidden rounded-2xl bg-primary-foreground/5 border border-primary-foreground/10 hover-lift hover:-translate-y-2">
                 <div className="aspect-[4/5] overflow-hidden">
                   <img src={p.img} alt={p.name} className="h-full w-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent" />
-                <div className="absolute bottom-0 p-5">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent pointer-events-none" />
+                <div className="absolute bottom-0 p-5 pointer-events-none">
                   <div className="font-display text-2xl text-gold">{p.name}</div>
                   <p className="text-xs opacity-90 mt-1">{p.desc}</p>
                 </div>
-              </div>
+              </Link>
             ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link to="/panchakarma" className="btn-gold inline-flex items-center gap-2 px-8 py-4 text-base">
+              Explore Panchakarma <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>
