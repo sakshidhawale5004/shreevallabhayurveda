@@ -34,7 +34,7 @@ function Raktamoshan() {
         eyebrow="Panchakarma" 
         title="Raktamokshan" 
         subtitle="Blood-letting therapy to detoxify Raktadhatu." 
-        image="/newimages/raktamokshana4.jpg" 
+        image="/newimages/rakstmohan.webp" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
         <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
@@ -82,9 +82,6 @@ function Raktamoshan() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
             <img src="/newimages/raktamokshana4.jpg" alt="Raktamokshan Leech Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
-          </div>
-          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/raktamokshana5.jpg" alt="Raktamokshan Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
             <img src="/newimages/rk6.jpg" alt="Raktamokshan Leech Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
