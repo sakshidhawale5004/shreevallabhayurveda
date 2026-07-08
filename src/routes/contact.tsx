@@ -86,13 +86,23 @@ function Contact() {
           {sent && <p className="text-green-700 text-sm mt-4">Thank you! We'll reach out shortly.</p>}
         </motion.form>
 
-        <div className="card-3d overflow-hidden min-h-[420px]">
-          <iframe
-            title="Clinic location"
-            src="https://www.google.com/maps?q=Seawoods+Sector+42A+Navi+Mumbai&output=embed"
-            className="w-full h-full min-h-[420px] border-0"
-            loading="lazy"
-          />
+        <div className="flex flex-col gap-6">
+          <div className="card-3d overflow-hidden min-h-[300px]">
+            <iframe
+              title="Seawoods Clinic location"
+              src="https://www.google.com/maps?q=Seawoods+Sector+42A+Navi+Mumbai&output=embed"
+              className="w-full h-full min-h-[300px] border-0"
+              loading="lazy"
+            />
+          </div>
+          <div className="card-3d overflow-hidden min-h-[300px]">
+            <iframe
+              title="Nerul Clinic location"
+              src="https://www.google.com/maps?q=Sangharsh+Society,+Nerul+Sector+6,+Navi+Mumbai+400706&output=embed"
+              className="w-full h-full min-h-[300px] border-0"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
     </Layout>
