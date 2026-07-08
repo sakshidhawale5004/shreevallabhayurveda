@@ -45,7 +45,7 @@ function Contact() {
         <Card3D className="p-8">
           <h3 className="font-display text-2xl text-primary">Reach us</h3>
           <div className="mt-4 space-y-3 text-sm">
-            <a href="mailto:swapnil@shreevallabhayurveda.com" className="flex items-start gap-2"><Mail className="h-4 w-4 text-gold mt-0.5" /> swapnil@shreevallabhayurveda.com</a>
+            <a href="mailto:info@shreevallabhayurveda.com" className="flex items-start gap-2"><Mail className="h-4 w-4 text-gold mt-0.5" /> info@shreevallabhayurveda.com</a>
             <div className="flex items-start gap-2"><MapPin className="h-4 w-4 text-gold mt-0.5" /> Serving Navi Mumbai & Mumbai</div>
             <p className="text-muted-foreground text-xs mt-4">Prefer WhatsApp? Message our Seawoods number for a callback within business hours.</p>
           </div>

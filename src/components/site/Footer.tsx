@@ -49,7 +49,7 @@ export function Footer() {
           <ul className="space-y-4 text-base opacity-90">
             <li className="flex gap-3"><Phone className="h-5 w-5 mt-0.5 shrink-0" /><a href="tel:+918652621285" className="hover:text-gold transition-colors">+91 8652 621 285 (Seawoods)</a></li>
             <li className="flex gap-3"><Phone className="h-5 w-5 mt-0.5 shrink-0" /><a href="tel:+919225301077" className="hover:text-gold transition-colors">+91 9225 301 077 (Nerul)</a></li>
-            <li className="flex gap-3"><Mail className="h-5 w-5 mt-0.5 shrink-0" /><a href="mailto:swapnil@shreevallabhayurveda.com" className="hover:text-gold transition-colors">swapnil@shreevallabhayurveda.com</a></li>
+            <li className="flex gap-3"><Mail className="h-5 w-5 mt-0.5 shrink-0" /><a href="mailto:info@shreevallabhayurveda.com" className="hover:text-gold transition-colors">info@shreevallabhayurveda.com</a></li>
             <li className="flex gap-3"><MapPin className="h-5 w-5 mt-0.5 shrink-0" />Seawoods & Nerul, Navi Mumbai</li>
           </ul>
         </div>
