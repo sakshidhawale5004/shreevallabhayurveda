@@ -34,7 +34,7 @@ function Vaman() {
         eyebrow="Panchakarma" 
         title="Vaman" 
         subtitle="Therapeutic emesis for Kapha dosha detoxification." 
-        image="/newimages/vaman.jpg" 
+        image="/newimages/vamanbg.jpg" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
         <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">

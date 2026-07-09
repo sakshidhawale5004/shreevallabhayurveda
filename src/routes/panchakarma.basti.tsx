@@ -34,7 +34,7 @@ function Basti() {
         eyebrow="Panchakarma" 
         title="Basti" 
         subtitle="The profound therapeutic enema for controlling Vata dosha and addressing the root of all diseases." 
-        image="/newimages/basti4.jpg" 
+        image="/newimages/bastibg.jpg" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
         <div className="space-y-8 text-xl text-muted-foreground leading-relaxed">
