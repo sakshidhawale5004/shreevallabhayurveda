@@ -78,13 +78,22 @@ function Vaman() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/vaman.jpg" alt="Vaman Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/vaman-final1.jpeg" alt="Vaman Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/assets/category-1.jpg.jpeg" alt="Vaman Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/vaman-final2.jpeg" alt="Vaman Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/assets/product-2.jpg.jpeg" alt="Vaman Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/vaman-final3.jpeg" alt="Vaman Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/vaman-final4.jpg" alt="Vaman Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/vaman-final5.jpg" alt="Vaman Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
+            <img src="/newimages/vaman-final6.jpg" alt="Vaman Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
         </div>
       </section>

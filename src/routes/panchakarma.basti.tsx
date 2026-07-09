@@ -75,22 +75,22 @@ function Basti() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/basti4.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/basti9.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/basti5.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/basti10.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/basti6.jpg" alt="Basti Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/basti11.jpg" alt="Basti Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/basti1.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/basti12.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/basti2.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/Basti13.jpg" alt="Basti Treatment" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
           <div className="overflow-hidden rounded-2xl shadow-lg card-3d">
-            <img src="/newimages/BASTI1 (2).jpg" alt="Basti Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
+            <img src="/newimages/basti13.jpeg" alt="Basti Therapy" className="w-full h-72 object-cover hover:scale-110 transition-transform duration-700" />
           </div>
         </div>
       </section>
