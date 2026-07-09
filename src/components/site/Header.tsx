@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Facebook, Instagram, Youtube } from "lucide-react";
 import logo from "@/assets/logo.asset.json";
 
 const treatments = [
@@ -58,9 +58,16 @@ export function Header() {
       <div className="bg-primary text-primary-foreground text-xs">
         <div className="container-page flex justify-between py-2">
           <span className="hidden sm:inline">Authentic Ayurveda & Panchakarma · Since 10,000+ patients treated</span>
-          <a href="tel:+918652621285" className="inline-flex items-center gap-1.5 font-medium">
-            <Phone className="h-3.5 w-3.5" /> +91 8652 621 285
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="tel:+918652621285" className="inline-flex items-center gap-1.5 font-medium hover:text-gold transition-colors">
+              <Phone className="h-3.5 w-3.5" /> +91 8652 621 285
+            </a>
+            <div className="flex items-center gap-3 border-l border-white/20 pl-4">
+              <a href="#" aria-label="Facebook" className="hover:text-gold transition-colors"><Facebook className="h-4 w-4" /></a>
+              <a href="#" aria-label="Instagram" className="hover:text-gold transition-colors"><Instagram className="h-4 w-4" /></a>
+              <a href="#" aria-label="YouTube" className="hover:text-gold transition-colors"><Youtube className="h-4 w-4" /></a>
+            </div>
+          </div>
         </div>
       </div>
       <div className="max-w-[1400px] w-full mx-auto px-4 lg:px-8 flex items-center justify-between py-2 xl:py-3">

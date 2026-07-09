@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide-react";
 import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { Card3D } from "@/components/site/Card3D";
@@ -23,7 +23,7 @@ function Contact() {
   const [sent, setSent] = useState(false);
   return (
     <Layout>
-      <PageHero eyebrow="Get in Touch" title="Book your consultation" subtitle="Two clinic locations across Navi Mumbai. Speak with our team to plan your personalised program." image="/newimages/hero-contact.jpg" />
+      <PageHero eyebrow="Get in Touch" title="Book your consultation" subtitle="Two clinic locations across Navi Mumbai. Speak with our team to plan your personalised program." image="/newimages/contact-final-bg.jpg" />
 
       <section className="container-page py-20 grid lg:grid-cols-3 gap-6">
         <Card3D className="p-8">
@@ -48,6 +48,11 @@ function Contact() {
             <a href="mailto:info@shreevallabhayurveda.com" className="flex items-start gap-2"><Mail className="h-4 w-4 text-gold mt-0.5" /> info@shreevallabhayurveda.com</a>
             <div className="flex items-start gap-2"><MapPin className="h-4 w-4 text-gold mt-0.5" /> Serving Navi Mumbai & Mumbai</div>
             <p className="text-muted-foreground text-xs mt-4">Prefer WhatsApp? Message our Seawoods number for a callback within business hours.</p>
+            <div className="pt-4 mt-4 border-t border-border flex items-center gap-4">
+              <a href="#" className="text-primary hover:text-gold transition-colors"><Facebook className="h-5 w-5" /></a>
+              <a href="#" className="text-primary hover:text-gold transition-colors"><Instagram className="h-5 w-5" /></a>
+              <a href="#" className="text-primary hover:text-gold transition-colors"><Youtube className="h-5 w-5" /></a>
+            </div>
           </div>
         </Card3D>
       </section>
