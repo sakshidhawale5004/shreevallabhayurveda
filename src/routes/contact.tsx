@@ -6,6 +6,7 @@ import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { Card3D } from "@/components/site/Card3D";
 import bg from "@/assets/bg_1.asset.json";
+import { submitContactFn } from "@/server/contacts";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -59,7 +60,26 @@ function Contact() {
 
       <section className="container-page pb-24 grid lg:grid-cols-2 gap-8">
         <motion.form
-          onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.currentTarget);
+            const data = {
+              fullName: formData.get("fullName") as string,
+              phone: formData.get("phone") as string,
+              email: (formData.get("email") as string) || "",
+              concern: (formData.get("concern") as string) || "",
+              message: (formData.get("message") as string) || "",
+            };
+            
+            try {
+              await submitContactFn({ data });
+              setSent(true);
+              e.currentTarget.reset();
+            } catch (err) {
+              console.error(err);
+              alert("Failed to send enquiry");
+            }
+          }}
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="card-3d p-8"
         >
@@ -68,26 +88,26 @@ function Contact() {
           <div className="grid sm:grid-cols-2 gap-4 mt-6">
             <label className="block">
               <span className="text-sm font-medium">Full name</span>
-              <input required className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
+              <input name="fullName" required className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
             </label>
             <label className="block">
               <span className="text-sm font-medium">Phone</span>
-              <input required type="tel" className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
+              <input name="phone" required type="tel" className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
             </label>
           </div>
           <label className="block mt-4">
             <span className="text-sm font-medium">Email</span>
-            <input type="email" className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
+            <input name="email" type="email" className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
           </label>
           <label className="block mt-4">
             <span className="text-sm font-medium">Concern / Condition</span>
-            <input className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. Thyroid, arthritis, general wellness…" />
+            <input name="concern" className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. Thyroid, arthritis, general wellness…" />
           </label>
           <label className="block mt-4">
             <span className="text-sm font-medium">Message</span>
-            <textarea rows={4} className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
+            <textarea name="message" rows={4} className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
           </label>
-          <button className="btn-primary mt-6 w-full sm:w-auto">Send Enquiry</button>
+          <button type="submit" className="btn-primary mt-6 w-full sm:w-auto">Send Enquiry</button>
           {sent && <p className="text-green-700 text-sm mt-4">Thank you! We'll reach out shortly.</p>}
         </motion.form>
 
