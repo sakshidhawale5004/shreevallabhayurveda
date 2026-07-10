@@ -24,8 +24,7 @@ function DashboardPage() {
 
   const handleLogout = async () => {
     await logoutFn();
-    router.invalidate();
-    router.navigate({ to: '/' });
+    window.location.href = '/';
   };
 
   const filteredContacts = contacts.filter(c => 

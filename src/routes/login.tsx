@@ -19,8 +19,7 @@ function LoginPage() {
     e.preventDefault();
     try {
       await loginFn({ data: { username, password } });
-      router.invalidate();
-      navigate({ to: "/dashboard" });
+      window.location.href = "/dashboard";
     } catch (err: any) {
       setError(err.message || "Invalid username or password");
     }
