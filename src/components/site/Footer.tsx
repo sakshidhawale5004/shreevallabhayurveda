@@ -9,7 +9,7 @@ export function Footer() {
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-24 grid gap-12 md:grid-cols-4">
         <div className="flex flex-col">
           <div>
-            <img src={logo.url} alt="Shree Vallabh Ayurveda" className="h-20 w-auto bg-background rounded-lg p-2 mb-6" />
+            <img src={logo.url} alt="Shree Vallabh Ayurveda" className="h-32 w-auto bg-background rounded-lg p-2 mb-6" />
             <p className="text-base opacity-80 leading-relaxed">Dr. Bhanushali's Shree Vallabh Ayurveda & Panchakarma — authentic classical Ayurveda for root-cause healing.</p>
           </div>
           <div className="mt-8 flex gap-4">
