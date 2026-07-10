@@ -18,8 +18,11 @@ function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await loginFn({ data: { username, password } });
-      window.location.href = "/dashboard";
+      const res = await loginFn({ data: { username, password } });
+      if (res.success) {
+        document.cookie = "adminAuth=true; path=/; max-age=604800";
+        window.location.href = "/dashboard";
+      }
     } catch (err: any) {
       setError(err.message || "Invalid username or password");
     }

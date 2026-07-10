@@ -24,6 +24,7 @@ function DashboardPage() {
 
   const handleLogout = async () => {
     await logoutFn();
+    document.cookie = "adminAuth=; path=/; max-age=0";
     window.location.href = '/';
   };
 

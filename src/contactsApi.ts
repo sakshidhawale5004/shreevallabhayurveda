@@ -56,14 +56,7 @@ export const loginFn = createServerFn({ method: "POST" })
   .validator((data: { username: string; password: string }) => data)
   .handler(async ({ data }) => {
     if (data.username === "shreevallabh" && data.password === "shreevallabh@2026") {
-      setCookie("adminAuth", "true", { 
-        httpOnly: true, 
-        secure: true, 
-        sameSite: "lax",
-        path: "/", 
-        maxAge: 60 * 60 * 24 * 7 
-      });
-      return { success: true };
+      return { success: true, token: "true" };
     }
     throw new Error("Invalid username or password");
   });
@@ -74,6 +67,5 @@ export const checkAuthFn = createServerFn({ method: "POST" }).handler(async () =
 });
 
 export const logoutFn = createServerFn({ method: "POST" }).handler(async () => {
-  setCookie("adminAuth", "", { httpOnly: true, path: "/", maxAge: 0 });
   return { success: true };
 });
