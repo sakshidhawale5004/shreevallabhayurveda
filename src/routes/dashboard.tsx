@@ -1,11 +1,16 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { fetchContactsFn } from '@/contactsApi';
+import { createFileRoute, redirect, useRouter } from '@tanstack/react-router';
+import { fetchContactsFn, checkAuthFn, logoutFn } from '@/contactsApi';
 import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
-import { useState, useEffect } from 'react';
-import { Card3D } from '@/components/site/Card3D';
+import { LogOut } from 'lucide-react';
 
 export const Route = createFileRoute('/dashboard')({
+  beforeLoad: async () => {
+    const isAuthenticated = await checkAuthFn();
+    if (!isAuthenticated) {
+      throw redirect({ to: '/login' });
+    }
+  },
   loader: async () => {
     const contacts = await fetchContactsFn();
     return { contacts };
@@ -15,57 +20,24 @@ export const Route = createFileRoute('/dashboard')({
 
 function DashboardPage() {
   const { contacts } = Route.useLoaderData();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const router = useRouter();
 
-  useEffect(() => {
-    if (sessionStorage.getItem("adminAuth") === "true") {
-      setIsLoggedIn(true);
-    }
-  }, []);
-
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (username === "shreevallabh" && password === "shreevallabh@2026") {
-      setIsLoggedIn(true);
-      sessionStorage.setItem("adminAuth", "true");
-      setError("");
-    } else {
-      setError("Invalid username or password");
-    }
+  const handleLogout = async () => {
+    await logoutFn();
+    router.invalidate();
+    router.navigate({ to: '/' });
   };
-
-  if (!isLoggedIn) {
-    return (
-      <Layout>
-        <div className="container-page py-24 flex justify-center items-center min-h-[60vh]">
-          <Card3D className="p-8 w-full max-w-md">
-            <h2 className="font-display text-3xl mb-2 text-primary">Admin Login</h2>
-            <p className="text-muted-foreground text-sm mb-6">Please sign in to view the dashboard.</p>
-            <form onSubmit={handleLogin} className="space-y-4">
-              <label className="block">
-                <span className="text-sm font-medium">Username</span>
-                <input required value={username} onChange={(e) => setUsername(e.target.value)} className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
-              </label>
-              <label className="block">
-                <span className="text-sm font-medium">Password</span>
-                <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)} className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
-              </label>
-              {error && <p className="text-red-500 text-sm">{error}</p>}
-              <button type="submit" className="btn-primary w-full mt-4">Sign In</button>
-            </form>
-          </Card3D>
-        </div>
-      </Layout>
-    );
-  }
 
   return (
     <Layout>
       <PageHero eyebrow="Admin Only" title="Contact Submissions" subtitle="View all enquiries from the contact form." />
       <div className="container-page py-12">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-2xl font-display">Dashboard</h2>
+          <button onClick={handleLogout} className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <LogOut className="w-4 h-4" /> Sign Out
+          </button>
+        </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {contacts.map((c) => (
             <div key={c.id} className="card-3d p-6 flex flex-col h-full">

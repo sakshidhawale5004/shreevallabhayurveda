@@ -1,6 +1,8 @@
 import { createServerFn } from "@tanstack/react-start";
+import { getCookie, setCookie, deleteCookie } from '@tanstack/react-start/server';
 import { promises as fs } from "fs";
 import path from "path";
+
 
 const dataFile = path.resolve(process.cwd(), "contacts.json");
 
@@ -49,3 +51,23 @@ export const submitContactFn = createServerFn({ method: "POST" })
     await fs.writeFile(dataFile, JSON.stringify(contacts, null, 2), "utf-8");
     return { success: true };
   });
+
+export const loginFn = createServerFn({ method: "POST" })
+  .validator((data: { username: string; password: string }) => data)
+  .handler(async ({ data }) => {
+    if (data.username === "shreevallabh" && data.password === "shreevallabh@2026") {
+      setCookie("adminAuth", "true", { httpOnly: true, path: "/", maxAge: 60 * 60 * 24 * 7 });
+      return { success: true };
+    }
+    throw new Error("Invalid username or password");
+  });
+
+export const checkAuthFn = createServerFn({ method: "GET" }).handler(async () => {
+  const authCookie = getCookie("adminAuth");
+  return authCookie === "true";
+});
+
+export const logoutFn = createServerFn({ method: "POST" }).handler(async () => {
+  setCookie("adminAuth", "", { httpOnly: true, path: "/", maxAge: 0 });
+  return { success: true };
+});
