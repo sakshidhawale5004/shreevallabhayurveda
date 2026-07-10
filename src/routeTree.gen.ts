@@ -11,11 +11,21 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VideosRouteImport } from './routes/videos'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as GarbhasanskarRouteImport } from './routes/garbhasanskar'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TreatmentsIndexRouteImport } from './routes/treatments.index'
+import { Route as PanchakarmaIndexRouteImport } from './routes/panchakarma.index'
 import { Route as TreatmentsSlugRouteImport } from './routes/treatments.$slug'
+import { Route as PanchakarmaVirechanRouteImport } from './routes/panchakarma.virechan'
+import { Route as PanchakarmaVamanRouteImport } from './routes/panchakarma.vaman'
+import { Route as PanchakarmaRaktamoshanRouteImport } from './routes/panchakarma.raktamoshan'
+import { Route as PanchakarmaNassyaRouteImport } from './routes/panchakarma.nassya'
+import { Route as PanchakarmaBastiRouteImport } from './routes/panchakarma.basti'
+import { Route as PanchakarmaAlliedKarmaRouteImport } from './routes/panchakarma.allied-karma'
 
 const VideosRoute = VideosRouteImport.update({
   id: '/videos',
@@ -27,9 +37,19 @@ const TestimonialsRoute = TestimonialsRouteImport.update({
   path: '/testimonials',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GarbhasanskarRoute = GarbhasanskarRouteImport.update({
+  id: '/garbhasanskar',
+  path: '/garbhasanskar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -47,9 +67,49 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TreatmentsIndexRoute = TreatmentsIndexRouteImport.update({
+  id: '/treatments/',
+  path: '/treatments/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanchakarmaIndexRoute = PanchakarmaIndexRouteImport.update({
+  id: '/panchakarma/',
+  path: '/panchakarma/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TreatmentsSlugRoute = TreatmentsSlugRouteImport.update({
   id: '/treatments/$slug',
   path: '/treatments/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanchakarmaVirechanRoute = PanchakarmaVirechanRouteImport.update({
+  id: '/panchakarma/virechan',
+  path: '/panchakarma/virechan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanchakarmaVamanRoute = PanchakarmaVamanRouteImport.update({
+  id: '/panchakarma/vaman',
+  path: '/panchakarma/vaman',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanchakarmaRaktamoshanRoute = PanchakarmaRaktamoshanRouteImport.update({
+  id: '/panchakarma/raktamoshan',
+  path: '/panchakarma/raktamoshan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanchakarmaNassyaRoute = PanchakarmaNassyaRouteImport.update({
+  id: '/panchakarma/nassya',
+  path: '/panchakarma/nassya',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanchakarmaBastiRoute = PanchakarmaBastiRouteImport.update({
+  id: '/panchakarma/basti',
+  path: '/panchakarma/basti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanchakarmaAlliedKarmaRoute = PanchakarmaAlliedKarmaRouteImport.update({
+  id: '/panchakarma/allied-karma',
+  path: '/panchakarma/allied-karma',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -57,29 +117,59 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/gallery': typeof GalleryRoute
+  '/garbhasanskar': typeof GarbhasanskarRoute
   '/testimonials': typeof TestimonialsRoute
   '/videos': typeof VideosRoute
+  '/panchakarma/allied-karma': typeof PanchakarmaAlliedKarmaRoute
+  '/panchakarma/basti': typeof PanchakarmaBastiRoute
+  '/panchakarma/nassya': typeof PanchakarmaNassyaRoute
+  '/panchakarma/raktamoshan': typeof PanchakarmaRaktamoshanRoute
+  '/panchakarma/vaman': typeof PanchakarmaVamanRoute
+  '/panchakarma/virechan': typeof PanchakarmaVirechanRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
+  '/panchakarma/': typeof PanchakarmaIndexRoute
+  '/treatments/': typeof TreatmentsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/gallery': typeof GalleryRoute
+  '/garbhasanskar': typeof GarbhasanskarRoute
   '/testimonials': typeof TestimonialsRoute
   '/videos': typeof VideosRoute
+  '/panchakarma/allied-karma': typeof PanchakarmaAlliedKarmaRoute
+  '/panchakarma/basti': typeof PanchakarmaBastiRoute
+  '/panchakarma/nassya': typeof PanchakarmaNassyaRoute
+  '/panchakarma/raktamoshan': typeof PanchakarmaRaktamoshanRoute
+  '/panchakarma/vaman': typeof PanchakarmaVamanRoute
+  '/panchakarma/virechan': typeof PanchakarmaVirechanRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
+  '/panchakarma': typeof PanchakarmaIndexRoute
+  '/treatments': typeof TreatmentsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dashboard': typeof DashboardRoute
   '/gallery': typeof GalleryRoute
+  '/garbhasanskar': typeof GarbhasanskarRoute
   '/testimonials': typeof TestimonialsRoute
   '/videos': typeof VideosRoute
+  '/panchakarma/allied-karma': typeof PanchakarmaAlliedKarmaRoute
+  '/panchakarma/basti': typeof PanchakarmaBastiRoute
+  '/panchakarma/nassya': typeof PanchakarmaNassyaRoute
+  '/panchakarma/raktamoshan': typeof PanchakarmaRaktamoshanRoute
+  '/panchakarma/vaman': typeof PanchakarmaVamanRoute
+  '/panchakarma/virechan': typeof PanchakarmaVirechanRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
+  '/panchakarma/': typeof PanchakarmaIndexRoute
+  '/treatments/': typeof TreatmentsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -87,38 +177,78 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dashboard'
     | '/gallery'
+    | '/garbhasanskar'
     | '/testimonials'
     | '/videos'
+    | '/panchakarma/allied-karma'
+    | '/panchakarma/basti'
+    | '/panchakarma/nassya'
+    | '/panchakarma/raktamoshan'
+    | '/panchakarma/vaman'
+    | '/panchakarma/virechan'
     | '/treatments/$slug'
+    | '/panchakarma/'
+    | '/treatments/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
+    | '/dashboard'
     | '/gallery'
+    | '/garbhasanskar'
     | '/testimonials'
     | '/videos'
+    | '/panchakarma/allied-karma'
+    | '/panchakarma/basti'
+    | '/panchakarma/nassya'
+    | '/panchakarma/raktamoshan'
+    | '/panchakarma/vaman'
+    | '/panchakarma/virechan'
     | '/treatments/$slug'
+    | '/panchakarma'
+    | '/treatments'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
+    | '/dashboard'
     | '/gallery'
+    | '/garbhasanskar'
     | '/testimonials'
     | '/videos'
+    | '/panchakarma/allied-karma'
+    | '/panchakarma/basti'
+    | '/panchakarma/nassya'
+    | '/panchakarma/raktamoshan'
+    | '/panchakarma/vaman'
+    | '/panchakarma/virechan'
     | '/treatments/$slug'
+    | '/panchakarma/'
+    | '/treatments/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  DashboardRoute: typeof DashboardRoute
   GalleryRoute: typeof GalleryRoute
+  GarbhasanskarRoute: typeof GarbhasanskarRoute
   TestimonialsRoute: typeof TestimonialsRoute
   VideosRoute: typeof VideosRoute
+  PanchakarmaAlliedKarmaRoute: typeof PanchakarmaAlliedKarmaRoute
+  PanchakarmaBastiRoute: typeof PanchakarmaBastiRoute
+  PanchakarmaNassyaRoute: typeof PanchakarmaNassyaRoute
+  PanchakarmaRaktamoshanRoute: typeof PanchakarmaRaktamoshanRoute
+  PanchakarmaVamanRoute: typeof PanchakarmaVamanRoute
+  PanchakarmaVirechanRoute: typeof PanchakarmaVirechanRoute
   TreatmentsSlugRoute: typeof TreatmentsSlugRoute
+  PanchakarmaIndexRoute: typeof PanchakarmaIndexRoute
+  TreatmentsIndexRoute: typeof TreatmentsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -137,11 +267,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestimonialsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/garbhasanskar': {
+      id: '/garbhasanskar'
+      path: '/garbhasanskar'
+      fullPath: '/garbhasanskar'
+      preLoaderRoute: typeof GarbhasanskarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -165,11 +309,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/treatments/': {
+      id: '/treatments/'
+      path: '/treatments'
+      fullPath: '/treatments/'
+      preLoaderRoute: typeof TreatmentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panchakarma/': {
+      id: '/panchakarma/'
+      path: '/panchakarma'
+      fullPath: '/panchakarma/'
+      preLoaderRoute: typeof PanchakarmaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/treatments/$slug': {
       id: '/treatments/$slug'
       path: '/treatments/$slug'
       fullPath: '/treatments/$slug'
       preLoaderRoute: typeof TreatmentsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panchakarma/virechan': {
+      id: '/panchakarma/virechan'
+      path: '/panchakarma/virechan'
+      fullPath: '/panchakarma/virechan'
+      preLoaderRoute: typeof PanchakarmaVirechanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panchakarma/vaman': {
+      id: '/panchakarma/vaman'
+      path: '/panchakarma/vaman'
+      fullPath: '/panchakarma/vaman'
+      preLoaderRoute: typeof PanchakarmaVamanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panchakarma/raktamoshan': {
+      id: '/panchakarma/raktamoshan'
+      path: '/panchakarma/raktamoshan'
+      fullPath: '/panchakarma/raktamoshan'
+      preLoaderRoute: typeof PanchakarmaRaktamoshanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panchakarma/nassya': {
+      id: '/panchakarma/nassya'
+      path: '/panchakarma/nassya'
+      fullPath: '/panchakarma/nassya'
+      preLoaderRoute: typeof PanchakarmaNassyaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panchakarma/basti': {
+      id: '/panchakarma/basti'
+      path: '/panchakarma/basti'
+      fullPath: '/panchakarma/basti'
+      preLoaderRoute: typeof PanchakarmaBastiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panchakarma/allied-karma': {
+      id: '/panchakarma/allied-karma'
+      path: '/panchakarma/allied-karma'
+      fullPath: '/panchakarma/allied-karma'
+      preLoaderRoute: typeof PanchakarmaAlliedKarmaRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -179,11 +379,31 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  DashboardRoute: DashboardRoute,
   GalleryRoute: GalleryRoute,
+  GarbhasanskarRoute: GarbhasanskarRoute,
   TestimonialsRoute: TestimonialsRoute,
   VideosRoute: VideosRoute,
+  PanchakarmaAlliedKarmaRoute: PanchakarmaAlliedKarmaRoute,
+  PanchakarmaBastiRoute: PanchakarmaBastiRoute,
+  PanchakarmaNassyaRoute: PanchakarmaNassyaRoute,
+  PanchakarmaRaktamoshanRoute: PanchakarmaRaktamoshanRoute,
+  PanchakarmaVamanRoute: PanchakarmaVamanRoute,
+  PanchakarmaVirechanRoute: PanchakarmaVirechanRoute,
   TreatmentsSlugRoute: TreatmentsSlugRoute,
+  PanchakarmaIndexRoute: PanchakarmaIndexRoute,
+  TreatmentsIndexRoute: TreatmentsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

@@ -6,7 +6,7 @@ import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { Card3D } from "@/components/site/Card3D";
 import bg from "@/assets/bg_1.asset.json";
-import { submitContactFn } from "@/server/contacts";
+import { submitContactFn } from "@/contactsApi";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { fetchContactsFn } from '@/server/contacts';
+import { fetchContactsFn } from '@/contactsApi';
 import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { useState, useEffect } from 'react';
