@@ -1,10 +1,7 @@
-import { createServerFn } from "@tanstack/react-start";
-import { getCookie, setCookie, deleteCookie } from '@tanstack/react-start/server';
-import { promises as fs } from "fs";
-import path from "path";
+// To make the dashboard work with Hostinger's PHP, we use standard fetch calls instead of Node.js createServerFn.
 
-
-const dataFile = path.resolve(process.cwd(), "contacts.json");
+// IMPORTANT: Replace this with your actual Hostinger domain name!
+export const HOSTINGER_API_URL = "https://your-hostinger-domain.com/api.php";
 
 export interface ContactSubmission {
   id: string;
@@ -16,56 +13,58 @@ export interface ContactSubmission {
   createdAt: string;
 }
 
-// Ensure the file exists
-async function getContacts(): Promise<ContactSubmission[]> {
-  try {
-    const data = await fs.readFile(dataFile, "utf-8");
-    return JSON.parse(data);
-  } catch (err: any) {
-    if (err.code === "ENOENT") {
-      return [];
-    }
-    throw err;
-  }
+// Helper to get auth token from cookie
+function getAuthToken() {
+  if (typeof document === 'undefined') return null;
+  const match = document.cookie.match(/(^| )adminAuthToken=([^;]+)/);
+  if (match) return match[2];
+  return null;
 }
 
-export const fetchContactsFn = createServerFn({ method: "GET" }).handler(async () => {
-  return await getContacts();
-});
+export const fetchContactsFn = async () => {
+  const token = getAuthToken();
+  if (!token) throw new Error("Unauthorized");
 
-export const submitContactFn = createServerFn({ method: "POST" })
-  .validator((data: Omit<ContactSubmission, "id" | "createdAt">) => data)
-  .handler(async ({ data }) => {
-    const contacts = await getContacts();
-    const newContact: ContactSubmission = {
-      id: crypto.randomUUID(),
-      fullName: data.fullName,
-      phone: data.phone,
-      email: data.email || "",
-      concern: data.concern || "",
-      message: data.message || "",
-      createdAt: new Date().toISOString(),
-    };
-    
-    contacts.push(newContact);
-    await fs.writeFile(dataFile, JSON.stringify(contacts, null, 2), "utf-8");
-    return { success: true };
+  const res = await fetch(`${HOSTINGER_API_URL}?action=get_contacts`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ token }),
   });
+  
+  if (!res.ok) throw new Error("Failed to fetch contacts");
+  return res.json();
+};
 
-export const loginFn = createServerFn({ method: "POST" })
-  .validator((data: { username: string; password: string }) => data)
-  .handler(async ({ data }) => {
-    if (data.username === "shreevallabh" && data.password === "shreevallabh@2026") {
-      return { success: true, token: "true" };
-    }
-    throw new Error("Invalid username or password");
+export const submitContactFn = async ({ data }: { data: Omit<ContactSubmission, "id" | "createdAt"> }) => {
+  const res = await fetch(`${HOSTINGER_API_URL}?action=submit`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
   });
+  
+  if (!res.ok) throw new Error("Failed to submit contact");
+  return res.json();
+};
 
-export const checkAuthFn = createServerFn({ method: "POST" }).handler(async () => {
-  const authCookie = getCookie("adminAuth");
-  return authCookie === "true";
-});
+export const loginFn = async ({ data }: { data: { username: string; password: string } }) => {
+  const res = await fetch(`${HOSTINGER_API_URL}?action=login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  
+  if (!res.ok) throw new Error("Invalid username or password");
+  return res.json();
+};
 
-export const logoutFn = createServerFn({ method: "POST" }).handler(async () => {
+export const checkAuthFn = async () => {
+  return !!getAuthToken();
+};
+
+export const logoutFn = async () => {
+  if (typeof document !== 'undefined') {
+    document.cookie = "adminAuthToken=; path=/; max-age=0";
+    document.cookie = "adminAuth=; path=/; max-age=0";
+  }
   return { success: true };
-});
+};

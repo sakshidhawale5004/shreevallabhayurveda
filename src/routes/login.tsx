@@ -20,7 +20,7 @@ function LoginPage() {
     try {
       const res = await loginFn({ data: { username, password } });
       if (res.success) {
-        document.cookie = "adminAuth=true; path=/; max-age=604800";
+        document.cookie = `adminAuthToken=${res.token}; path=/; max-age=604800`;
         window.location.href = "/dashboard";
       }
     } catch (err: any) {
