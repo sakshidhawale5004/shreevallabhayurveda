@@ -6,6 +6,7 @@ import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { Card3D } from "@/components/site/Card3D";
 import bg from "@/assets/bg_1.asset.json";
+import { submitContactFn } from "@/contactsApi";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -59,22 +60,33 @@ function Contact() {
 
       <section className="container-page pb-24 grid lg:grid-cols-2 gap-8">
         <motion.form
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
             const formData = new FormData(e.currentTarget);
-            const fullName = formData.get("fullName") as string;
-            const phone = formData.get("phone") as string;
-            const email = (formData.get("email") as string) || "Not provided";
-            const concern = (formData.get("concern") as string) || "Not specified";
-            const message = (formData.get("message") as string) || "No message";
+            const data = {
+              fullName: formData.get("fullName") as string,
+              phone: formData.get("phone") as string,
+              email: (formData.get("email") as string) || "Not provided",
+              concern: (formData.get("concern") as string) || "Not specified",
+              message: (formData.get("message") as string) || "No message",
+            };
             
-            const text = `Hello Shree Vallabh Ayurveda, I have an enquiry:\n\n*Name:* ${fullName}\n*Phone:* ${phone}\n*Email:* ${email}\n*Concern:* ${concern}\n*Message:* ${message}`;
-            const encodedText = encodeURIComponent(text);
-            const whatsappUrl = `https://wa.me/918652621285?text=${encodedText}`;
-            
-            window.open(whatsappUrl, '_blank');
-            setSent(true);
-            e.currentTarget.reset();
+            try {
+              // 1. Submit to backend so it shows in the dashboard
+              await submitContactFn({ data });
+              
+              // 2. Open WhatsApp link
+              const text = `Hello Shree Vallabh Ayurveda, I have an enquiry:\n\n*Name:* ${data.fullName}\n*Phone:* ${data.phone}\n*Email:* ${data.email}\n*Concern:* ${data.concern}\n*Message:* ${data.message}`;
+              const encodedText = encodeURIComponent(text);
+              const whatsappUrl = `https://wa.me/918652621285?text=${encodedText}`;
+              
+              window.open(whatsappUrl, '_blank');
+              setSent(true);
+              e.currentTarget.reset();
+            } catch (err) {
+              console.error(err);
+              alert("Failed to send enquiry");
+            }
           }}
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="card-3d p-8"
