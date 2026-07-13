@@ -6,7 +6,6 @@ import { Layout } from "@/components/site/Layout";
 import { PageHero } from "@/components/site/PageHero";
 import { Card3D } from "@/components/site/Card3D";
 import bg from "@/assets/bg_1.asset.json";
-import { submitContactFn } from "@/contactsApi";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -60,25 +59,22 @@ function Contact() {
 
       <section className="container-page pb-24 grid lg:grid-cols-2 gap-8">
         <motion.form
-          onSubmit={async (e) => {
+          onSubmit={(e) => {
             e.preventDefault();
             const formData = new FormData(e.currentTarget);
-            const data = {
-              fullName: formData.get("fullName") as string,
-              phone: formData.get("phone") as string,
-              email: (formData.get("email") as string) || "",
-              concern: (formData.get("concern") as string) || "",
-              message: (formData.get("message") as string) || "",
-            };
+            const fullName = formData.get("fullName") as string;
+            const phone = formData.get("phone") as string;
+            const email = (formData.get("email") as string) || "Not provided";
+            const concern = (formData.get("concern") as string) || "Not specified";
+            const message = (formData.get("message") as string) || "No message";
             
-            try {
-              await submitContactFn({ data });
-              setSent(true);
-              e.currentTarget.reset();
-            } catch (err) {
-              console.error(err);
-              alert("Failed to send enquiry");
-            }
+            const text = `Hello Shree Vallabh Ayurveda, I have an enquiry:\n\n*Name:* ${fullName}\n*Phone:* ${phone}\n*Email:* ${email}\n*Concern:* ${concern}\n*Message:* ${message}`;
+            const encodedText = encodeURIComponent(text);
+            const whatsappUrl = `https://wa.me/918652621285?text=${encodedText}`;
+            
+            window.open(whatsappUrl, '_blank');
+            setSent(true);
+            e.currentTarget.reset();
           }}
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="card-3d p-8"

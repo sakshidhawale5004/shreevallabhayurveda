@@ -11,10 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VideosRouteImport } from './routes/videos'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
-import { Route as LoginRouteImport } from './routes/login'
 import { Route as GarbhasanskarRouteImport } from './routes/garbhasanskar'
 import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -38,11 +36,6 @@ const TestimonialsRoute = TestimonialsRouteImport.update({
   path: '/testimonials',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const GarbhasanskarRoute = GarbhasanskarRouteImport.update({
   id: '/garbhasanskar',
   path: '/garbhasanskar',
@@ -51,11 +44,6 @@ const GarbhasanskarRoute = GarbhasanskarRouteImport.update({
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -123,10 +111,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/dashboard': typeof DashboardRoute
   '/gallery': typeof GalleryRoute
   '/garbhasanskar': typeof GarbhasanskarRoute
-  '/login': typeof LoginRoute
   '/testimonials': typeof TestimonialsRoute
   '/videos': typeof VideosRoute
   '/panchakarma/allied-karma': typeof PanchakarmaAlliedKarmaRoute
@@ -143,10 +129,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/dashboard': typeof DashboardRoute
   '/gallery': typeof GalleryRoute
   '/garbhasanskar': typeof GarbhasanskarRoute
-  '/login': typeof LoginRoute
   '/testimonials': typeof TestimonialsRoute
   '/videos': typeof VideosRoute
   '/panchakarma/allied-karma': typeof PanchakarmaAlliedKarmaRoute
@@ -164,10 +148,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/dashboard': typeof DashboardRoute
   '/gallery': typeof GalleryRoute
   '/garbhasanskar': typeof GarbhasanskarRoute
-  '/login': typeof LoginRoute
   '/testimonials': typeof TestimonialsRoute
   '/videos': typeof VideosRoute
   '/panchakarma/allied-karma': typeof PanchakarmaAlliedKarmaRoute
@@ -186,10 +168,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/dashboard'
     | '/gallery'
     | '/garbhasanskar'
-    | '/login'
     | '/testimonials'
     | '/videos'
     | '/panchakarma/allied-karma'
@@ -206,10 +186,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/dashboard'
     | '/gallery'
     | '/garbhasanskar'
-    | '/login'
     | '/testimonials'
     | '/videos'
     | '/panchakarma/allied-karma'
@@ -226,10 +204,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/dashboard'
     | '/gallery'
     | '/garbhasanskar'
-    | '/login'
     | '/testimonials'
     | '/videos'
     | '/panchakarma/allied-karma'
@@ -247,10 +223,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  DashboardRoute: typeof DashboardRoute
   GalleryRoute: typeof GalleryRoute
   GarbhasanskarRoute: typeof GarbhasanskarRoute
-  LoginRoute: typeof LoginRoute
   TestimonialsRoute: typeof TestimonialsRoute
   VideosRoute: typeof VideosRoute
   PanchakarmaAlliedKarmaRoute: typeof PanchakarmaAlliedKarmaRoute
@@ -280,13 +254,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestimonialsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/garbhasanskar': {
       id: '/garbhasanskar'
       path: '/garbhasanskar'
@@ -299,13 +266,6 @@ declare module '@tanstack/react-router' {
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -399,10 +359,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  DashboardRoute: DashboardRoute,
   GalleryRoute: GalleryRoute,
   GarbhasanskarRoute: GarbhasanskarRoute,
-  LoginRoute: LoginRoute,
   TestimonialsRoute: TestimonialsRoute,
   VideosRoute: VideosRoute,
   PanchakarmaAlliedKarmaRoute: PanchakarmaAlliedKarmaRoute,
