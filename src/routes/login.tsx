@@ -21,7 +21,7 @@ function LoginPage() {
       const res = await loginFn({ data: { username, password } });
       if (res.success) {
         document.cookie = `adminAuthToken=${res.token}; path=/; max-age=604800`;
-        window.location.href = "/dashboard";
+        navigate({ to: "/dashboard" });
       }
     } catch (err: any) {
       setError(err.message || "Invalid username or password");
