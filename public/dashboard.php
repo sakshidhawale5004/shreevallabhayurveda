@@ -1,5 +1,7 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Kolkata');
+
 
 $adminUsername = 'shreevallabh';
 $adminPassword = 'shreevallabh@2026';

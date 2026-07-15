@@ -5,6 +5,7 @@
 // Disable error display so warnings don't corrupt JSON output
 ini_set('display_errors', 0);
 error_reporting(0);
+date_default_timezone_set('Asia/Kolkata');
 
 // Allow cross-origin requests from Vercel/Localhost
 header("Access-Control-Allow-Origin: *");
