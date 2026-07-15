@@ -68,7 +68,7 @@ function LoginPage() {
           )}
           
           <button type="submit" className="w-full bg-primary text-primary-foreground font-semibold py-3 px-4 rounded-lg shadow-lg hover:shadow-primary/25 hover:bg-primary/90 transition-all active:scale-[0.98] mt-2">
-            Authenticate
+            Login
           </button>
         </form>
       </Card3D>

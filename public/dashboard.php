@@ -71,7 +71,7 @@ if (!file_exists($dataFile)) {
                 <div class="input-group">
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
-                <button type="submit">Authenticate</button>
+                <button type="submit">Login</button>
             </form>
         </div>
     </div>
