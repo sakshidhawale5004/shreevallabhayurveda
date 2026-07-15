@@ -2,7 +2,11 @@
 // api.php
 // This file handles the backend database functionality for Hostinger Shared Hosting.
 
-// Allow cross-origin requests from Vercel
+// Disable error display so warnings don't corrupt JSON output
+ini_set('display_errors', 0);
+error_reporting(0);
+
+// Allow cross-origin requests from Vercel/Localhost
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
@@ -17,9 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 $dataFile = __DIR__ . '/contacts.json';
 
-// Ensure the contacts file exists
+// Ensure the contacts file exists safely
 if (!file_exists($dataFile)) {
-    file_put_contents($dataFile, json_encode([]));
+    @file_put_contents($dataFile, json_encode([]));
 }
 
 // Get the raw POST data from the React app

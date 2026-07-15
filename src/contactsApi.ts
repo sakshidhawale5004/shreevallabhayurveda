@@ -71,18 +71,17 @@ export const loginFn = async ({ data }: { data: { username: string; password: st
     throw new Error("Invalid username or password");
   }
 
-  try {
-    const res = await fetch(`${HOSTINGER_API_URL}?action=login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    
-    if (!res.ok) throw new Error("Invalid username or password");
-    return res.json();
-  } catch (err) {
-    throw new Error("Could not connect to Hostinger backend. Please check your domain setup.");
+  const res = await fetch(`${HOSTINGER_API_URL}?action=login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`API Error (${res.status}): ` + (errText || "Invalid username or password"));
   }
+  return res.json();
 };
 
 export const checkAuthFn = async () => {
