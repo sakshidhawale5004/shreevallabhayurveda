@@ -21,7 +21,7 @@ function Garbhasanskar() {
         eyebrow="Specialty" 
         title="Garbhasanskar" 
         subtitle="Ayurvedic Medicinal Garbhasanskar for a healthy pregnancy and a divine child." 
-        image="/newimages/garbhasanskar.jpg" 
+        image="/newimages/minimal-abstract-background-with-shadow-tropical-palm-leaves-green-background.jpg" 
       />
       <section className="container-page py-20 grid lg:grid-cols-2 gap-16 items-start">
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">

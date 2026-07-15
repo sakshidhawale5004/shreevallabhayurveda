@@ -4,13 +4,10 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import logo from "../assets/logo.asset.json";
 
-import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -74,44 +71,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dr. Bhanushali's Shree Vallabh Ayurveda & Panchakarma — Navi Mumbai" },
-      { name: "description", content: "Authentic Ayurveda and Panchakarma in Navi Mumbai. Root-cause treatment for heart disease, diabetes, stroke, thyroid, infertility, arthritis and more by Dr. Swapnil Bhanushali." },
-      { name: "author", content: "Dr. Swapnil Bhanushali" },
-      { property: "og:title", content: "Dr. Bhanushali's Shree Vallabh Ayurveda & Panchakarma" },
-      { property: "og:description", content: "10,000+ patients healed through authentic classical Ayurveda and Panchakarma. Seawoods & Nerul, Navi Mumbai." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      }
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();

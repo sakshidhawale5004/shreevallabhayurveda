@@ -30,7 +30,7 @@ export const Route = createFileRoute("/testimonials")({
 function Testimonials() {
   return (
     <Layout>
-      <PageHero eyebrow="Patient Voices" title="What our patients say" subtitle="Every recovery is a story of trust, dedication and authentic Ayurveda." image="/newimages/hero-testimonials.jpg" />
+      <PageHero eyebrow="Patient Voices" title="What our patients say" subtitle="Every recovery is a story of trust, dedication and authentic Ayurveda." image="/newimages/elevated-view-various-spa-products-grey-backdrop.jpg" />
       <section className="container-page py-20 grid md:grid-cols-2 gap-6">
         {testimonials.map((t, i) => (
           <motion.div key={t.n} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 2) * 0.1 }}>
