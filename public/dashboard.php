@@ -7,6 +7,21 @@ $adminUsername = 'shreevallabh';
 $adminPassword = 'shreevallabh@2026';
 $dataFile = __DIR__ . '/contacts.json';
 
+// Handle Delete (Must be before HTML output)
+if (isset($_GET['delete_id'])) {
+    $deleteId = $_GET['delete_id'];
+    $contacts = json_decode(@file_get_contents($dataFile), true);
+    if ($contacts) {
+        $contacts = array_filter($contacts, function($contact) use ($deleteId) {
+            return $contact['id'] !== $deleteId;
+        });
+        $contacts = array_values($contacts);
+        file_put_contents($dataFile, json_encode($contacts, JSON_PRETTY_PRINT));
+    }
+    header("Location: dashboard.php");
+    exit();
+}
+
 // Handle Logout
 if (isset($_GET['logout'])) {
     session_destroy();
@@ -304,18 +319,6 @@ if (!file_exists($dataFile)) {
 
             <?php
             $contacts = json_decode(@file_get_contents($dataFile), true);
-            
-            // Handle Delete
-            if (isset($_GET['delete_id'])) {
-                $deleteId = $_GET['delete_id'];
-                $contacts = array_filter($contacts, function($contact) use ($deleteId) {
-                    return $contact['id'] !== $deleteId;
-                });
-                $contacts = array_values($contacts);
-                file_put_contents($dataFile, json_encode($contacts, JSON_PRETTY_PRINT));
-                header("Location: dashboard.php");
-                exit();
-            }
 
             if (!$contacts || count($contacts) === 0):
             ?>
