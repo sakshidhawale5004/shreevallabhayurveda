@@ -1,7 +1,6 @@
 // To make the dashboard work with Hostinger's PHP, we use standard fetch calls instead of Node.js createServerFn.
 
-// IMPORTANT: Replace this with your actual Hostinger domain name!
-export const HOSTINGER_API_URL = "https://your-hostinger-domain.com/api.php";
+export const HOSTINGER_API_URL = "/api.php";
 
 export interface ContactSubmission {
   id: string;
@@ -21,7 +20,9 @@ function getAuthToken() {
   return null;
 }
 
-const isDemoMode = HOSTINGER_API_URL.includes("your-hostinger-domain");
+// Use demo mode only during local development (Vite), 
+// but use actual PHP API on Hostinger (production)
+const isDemoMode = import.meta.env.DEV;
 
 export const fetchContactsFn = async () => {
   const token = getAuthToken();
