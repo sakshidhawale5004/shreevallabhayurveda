@@ -22,6 +22,30 @@ if (isset($_GET['delete_id'])) {
     exit();
 }
 
+// Handle CSV Export
+if (isset($_GET['export']) && $_GET['export'] === 'csv' && isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) {
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename="patient_enquiries.csv"');
+    $out = fopen('php://output', 'w');
+    fputcsv($out, array('Date', 'Patient Name', 'Phone', 'Email', 'Concern', 'Message'));
+    
+    $contacts = json_decode(@file_get_contents($dataFile), true);
+    if ($contacts) {
+        foreach ($contacts as $contact) {
+            fputcsv($out, array(
+                date('M d, Y g:i A', strtotime($contact['createdAt'])),
+                $contact['fullName'],
+                $contact['phone'],
+                $contact['email'] ?? '',
+                $contact['concern'] ?? '',
+                $contact['message'] ?? ''
+            ));
+        }
+    }
+    fclose($out);
+    exit();
+}
+
 // Handle Logout
 if (isset($_GET['logout'])) {
     session_destroy();
@@ -183,6 +207,28 @@ if (!file_exists($dataFile)) {
             background: var(--danger); 
             color: #ffffff;
         }
+        
+        .export-btn {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            border-radius: 6px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+        .export-btn:hover {
+            background: #166534;
+            color: #ffffff;
+            border-color: #166534;
+        }
 
         /* Highly Readable Table */
         .table-container {
@@ -314,7 +360,17 @@ if (!file_exists($dataFile)) {
                     </svg>
                     <h1 style="margin: 0; font-size: 24px;">Contact Enquiries</h1>
                 </div>
-                <a href="?logout=1"><button class="logout-btn">Log Out</button></a>
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <a href="?export=csv" class="export-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Export to Excel
+                    </a>
+                    <a href="?logout=1"><button class="logout-btn">Log Out</button></a>
+                </div>
             </div>
 
             <?php
