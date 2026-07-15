@@ -87,38 +87,59 @@ if (!file_exists($dataFile)) {
 
             <?php
             $contacts = json_decode(@file_get_contents($dataFile), true);
-            if (!$contacts || count($contacts) === 0):
-            ?>
-                <div class="empty-state">
-                    <h3>No contacts found</h3>
-                    <p>When users submit the contact form, they will appear here.</p>
-                </div>
-            <?php else: ?>
-                <table>
-                    <thead>
+        
+        // Handle Delete
+        if (isset($_GET['delete_id'])) {
+            $deleteId = $_GET['delete_id'];
+            $contacts = array_filter($contacts, function($contact) use ($deleteId) {
+                return $contact['id'] !== $deleteId;
+            });
+            $contacts = array_values($contacts); // Re-index array
+            file_put_contents($dataFile, json_encode($contacts, JSON_PRETTY_PRINT));
+            header("Location: dashboard.php");
+            exit();
+        }
+
+        if (!$contacts || count($contacts) === 0):
+        ?>
+            <div class="empty-state">
+                <h3>No contacts found</h3>
+                <p>When users submit the contact form, they will appear here.</p>
+            </div>
+        <?php else: ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Concern</th>
+                        <th>Message</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($contacts as $contact): ?>
                         <tr>
-                            <th>Date</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Concern</th>
-                            <th>Message</th>
+                            <td><?php echo date('M d, Y g:i A', strtotime($contact['createdAt'])); ?></td>
+                            <td><strong><?php echo htmlspecialchars($contact['fullName']); ?></strong></td>
+                            <td><?php echo htmlspecialchars($contact['phone']); ?></td>
+                            <td><?php echo htmlspecialchars($contact['email'] ?? '-'); ?></td>
+                            <td><?php echo htmlspecialchars($contact['concern'] ?? '-'); ?></td>
+                            <td><?php echo nl2br(htmlspecialchars($contact['message'] ?? '-')); ?></td>
+                            <td>
+                                <a href="?delete_id=<?php echo urlencode($contact['id']); ?>" 
+                                   onclick="return confirm('Are you sure you want to delete this contact?');"
+                                   style="color: #ef4444; text-decoration: none; font-size: 13px; font-weight: bold;">
+                                   Delete
+                                </a>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($contacts as $contact): ?>
-                            <tr>
-                                <td><?php echo date('M d, Y g:i A', strtotime($contact['createdAt'])); ?></td>
-                                <td><strong><?php echo htmlspecialchars($contact['fullName']); ?></strong></td>
-                                <td><?php echo htmlspecialchars($contact['phone']); ?></td>
-                                <td><?php echo htmlspecialchars($contact['email'] ?? '-'); ?></td>
-                                <td><?php echo htmlspecialchars($contact['concern'] ?? '-'); ?></td>
-                                <td><?php echo nl2br(htmlspecialchars($contact['message'] ?? '-')); ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            <?php endif; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php endif; ?>
         </div>
     </div>
 <?php endif; ?>

@@ -22,6 +22,8 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   return (
     <Layout>
       <PageHero eyebrow="Get in Touch" title="Book your consultation" subtitle="Two clinic locations across Navi Mumbai. Speak with our team to plan your personalised program." image="/newimages/contact-final-bg.jpg" />
@@ -62,6 +64,8 @@ function Contact() {
         <motion.form
           onSubmit={async (e) => {
             e.preventDefault();
+            if (isSubmitting) return;
+            setIsSubmitting(true);
             const formData = new FormData(e.currentTarget);
             const data = {
               fullName: formData.get("fullName") as string,
@@ -86,6 +90,8 @@ function Contact() {
             } catch (err) {
               console.error(err);
               alert("Failed to send enquiry");
+            } finally {
+              setIsSubmitting(false);
             }
           }}
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -115,7 +121,9 @@ function Contact() {
             <span className="text-sm font-medium">Message</span>
             <textarea name="message" rows={4} className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
           </label>
-          <button type="submit" className="btn-primary mt-6 w-full sm:w-auto">Send Enquiry</button>
+          <button type="submit" disabled={isSubmitting} className="btn-primary mt-6 w-full sm:w-auto disabled:opacity-70 disabled:cursor-not-allowed">
+            {isSubmitting ? "Sending..." : "Send Enquiry"}
+          </button>
           {sent && <p className="text-green-700 text-sm mt-4">Thank you! We'll reach out shortly.</p>}
         </motion.form>
 
